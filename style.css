@@ -1,0 +1,88 @@
+/* contentMain
+contentLeft
+contentLeftTop
+contentLeftBottom
+contentRight
+ */
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+    font-family: OCR A Extended;
+}
+
+body {
+    background-color: #18181B;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    height: 100vh;
+}
+
+.sectionPokemonInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.contentMain {
+    width: 1750px;
+    height: 800px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.contentLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 180px;
+}
+.contentLeftBottom {
+    width: 800px;
+}
+
+.contentRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageElement {
+    height: 500px;
+}
+
+.idElement {
+    font-size: 200px;
+    color: rgb(173, 173, 173);
+}
+
+.nameElement {
+    font-size: 80px;
+    
+}
+.typeElement {
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.statisticElement {
+    margin-bottom: 22px;
+    font-size: 30px;
+}
+
+
+.headerPosition {
+    position: absolute;
+}
