@@ -5,7 +5,7 @@ function capitalizarPrimeiraLetra(str) {
 
 // Adiciona um ouvinte de eventos para o evento de envio do formulário
 document.querySelector('form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Evita o envio padrão do formulário (que recarregaria a página)
+    event.preventDefault(); // Evita o envio padrão do formulário que recarregaria a página
 
     // Obtém o valor digitado pelo usuário e converte para letras minúsculas
     const pokemonName = document.getElementById('pokemonName').value.toLowerCase();
@@ -45,6 +45,16 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const contentLeftBottom = document.createElement('div')
             const nameElement = document.createElement('h2');
             const typeElement = document.createElement('p')
+
+            const divWeight = document.createElement('div');
+            const divHeight = document.createElement('div');
+            const divHp = document.createElement('div');
+            const divAtk = document.createElement('div');
+            const divAtkSpecial = document.createElement('div');
+            const divDef = document.createElement('div');
+            const divDefSpecial = document.createElement('div');
+            const divSpeed = document.createElement('div');
+
             const weightElement = document.createElement('p')
             const heightElement = document.createElement('p')
             const hpElement = document.createElement('p');
@@ -53,6 +63,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const defElement = document.createElement('p');
             const defSpecialElement = document.createElement('p');
             const speedElement = document.createElement('p');
+
             const contentRight = document.createElement('div')
             const imageElement = document.createElement('img');
             const idElement = document.createElement('p')
@@ -93,6 +104,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
             contentMain.appendChild(contentRight);
             contentLeft.appendChild(contentLeftTop);
             contentLeft.appendChild(contentLeftBottom);
+
             contentRight.appendChild(imageElement);
             contentRight.appendChild(idElement);
             contentLeftTop.appendChild(nameElement);
@@ -134,9 +146,10 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 nameElement.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type]})`;
                 nameElement.style.color = typeShadows[type];
                 idElement.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type]})`;
-/*                 contentMain.style.backgroundImage = 'url("grass 1.png")';
+                /* contentMain.style.backgroundImage = 'url("grass 1.png")';
                 contentMain.style.backgroundRepeat = "no-repeat";
-                contentLeft.style.backgroundSize = "coven"; */
+                contentLeft.style.backgroundSize = "coven";
+                contentLeft.style.position = "center"; */
                 
 
             }
