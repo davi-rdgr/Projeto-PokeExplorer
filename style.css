@@ -48,9 +48,15 @@ main {
     gap: 180px;
 }
 .contentLeftBottom {
-    width: 800px;
+    width: 950px;
+    /* o padrão é 800 */
 }
-
+.divPrintResult {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    margin-top: 5px;
+}
 .contentRight {
     display: flex;
     flex-direction: column;

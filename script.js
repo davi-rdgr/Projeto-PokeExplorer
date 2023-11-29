@@ -38,66 +38,143 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const attackSpecial = data.stats.find(stat => stat.stat.name === 'special-attack').base_stat;
             const defenseSpecial = data.stats.find(stat => stat.stat.name === 'special-defense').base_stat;
 
-            // Cria elementos HTML para exibir o nome e a imagem do Pokemon
+            // Constantes para normalizar os valores
+            const MAX_WEIGHT = 2999;
+            const MAX_HEIGHT = 145;
+            const MAX_HEALTH = 255; // Valor máximo possível para a estatística de saúde (HP)
+            const MAX_ATTACK = 165;
+            const MAX_ATTACK_SPECIAL = 150;
+            const MAX_DEFENSE = 230;
+            const MAX_DEFENSE_SPECIAL = 255;
+            const MAX_SPEED = 160;
+
+            // Normaliza os valores para a faixa de 0 a 100
+            const normalizedWeight = (weight / MAX_WEIGHT) * 100;
+            const normalizedHeight = (height / MAX_HEIGHT) * 100;
+            const normalizedHealth = (health / MAX_HEALTH) * 100;
+            const normalizedAttack = (attack / MAX_ATTACK) * 100;
+            const normalizedAttackSpecial = (attackSpecial / MAX_ATTACK_SPECIAL) * 100;
+            const normalizedDefense = (defense / MAX_DEFENSE) * 100;
+            const normalizedDefenseSpecial = (defenseSpecial / MAX_DEFENSE_SPECIAL) * 100;
+            const normalizedSpeed = (speed / MAX_SPEED) * 100;
+
+            // Cria elementos HTML para exibir as informações do Pokemon
             const contentMain = document.createElement('div');
-            const contentLeft = document.createElement('div')
-            const contentLeftTop = document.createElement('div')
-            const contentLeftBottom = document.createElement('div')
+            const contentLeft = document.createElement('div');
+            const contentLeftTop = document.createElement('div');
+            const contentLeftBottom = document.createElement('div');
             const nameElement = document.createElement('h2');
-            const typeElement = document.createElement('p')
+            const typeElement = document.createElement('p');
 
             const divWeight = document.createElement('div');
+            const weightLabelElement = document.createElement('p');
+            const weightProgressBar = document.createElement('progress');
             const divHeight = document.createElement('div');
+            const heightLabelElement = document.createElement('p');
+            const heightProgressBar = document.createElement('progress');
             const divHp = document.createElement('div');
+            const hpLabelElement = document.createElement('p');
+            const hpProgressBar = document.createElement('progress');
             const divAtk = document.createElement('div');
+            const atkLabelElement = document.createElement('p');
+            const atkProgressBar = document.createElement('progress');
             const divAtkSpecial = document.createElement('div');
+            const atkSpecialLabelElement = document.createElement('p');
+            const atkSpecialProgressBar = document.createElement('progress');
             const divDef = document.createElement('div');
+            const defLabelElement = document.createElement('p');
+            const defProgressBar = document.createElement('progress');
             const divDefSpecial = document.createElement('div');
+            const defSpecialLabelElement = document.createElement('p');
+            const defSpecialProgressBar = document.createElement('progress');
             const divSpeed = document.createElement('div');
+            const speedLabelElement = document.createElement('p');
+            const speedProgressBar = document.createElement('progress');
 
-            const weightElement = document.createElement('p')
-            const heightElement = document.createElement('p')
+            const weightElement = document.createElement('p');
+            const heightElement = document.createElement('p');
             const hpElement = document.createElement('p');
             const atkElement = document.createElement('p');
-            const AtkSpecialElement = document.createElement('p');
+            const atkSpecialElement = document.createElement('p');
             const defElement = document.createElement('p');
             const defSpecialElement = document.createElement('p');
             const speedElement = document.createElement('p');
 
-            const contentRight = document.createElement('div')
+            const contentRight = document.createElement('div');
             const imageElement = document.createElement('img');
-            const idElement = document.createElement('p')
+            const idElement = document.createElement('p');
 
-            contentMain.className = 'contentMain'
+            // Adiciona classes aos elementos
+            contentMain.className = 'contentMain';
             contentLeft.className = 'contentLeft';
             contentLeftTop.className = 'contentLeftTop';
             contentLeftBottom.className = 'contentLeftBottom';
-            contentRight.className = 'contentRight'
-            imageElement.className = 'imageElement'
-            idElement.className = 'idElement'
-            nameElement.className = 'nameElement'
-            typeElement.className = 'typeElement'
-            weightElement.className = 'statisticElement'
-            heightElement.className = 'statisticElement'
-            hpElement.className = 'statisticElement'
-            atkElement.className = 'statisticElement'
-            AtkSpecialElement.className = 'statisticElement'
-            defElement.className = 'statisticElement'
-            defSpecialElement.className = 'statisticElement'
-            speedElement.className = 'statisticElement'
+            contentRight.className = 'contentRight';
 
+            divWeight.className = 'divPrintResult';
+            divHeight.className = 'divPrintResult';
+            divHp.className = 'divPrintResult';
+            divAtk.className = 'divPrintResult';
+            divAtkSpecial.className = 'divPrintResult';
+            divDef.className = 'divPrintResult';
+            divDefSpecial.className = 'divPrintResult';
+            divSpeed.className = 'divPrintResult';
+
+            imageElement.className = 'imageElement';
+            idElement.className = 'idElement';
+            nameElement.className = 'nameElement';
+            typeElement.className = 'typeElement';
+            weightElement.className = 'statisticElement';
+            heightElement.className = 'statisticElement';
+            hpElement.className = 'statisticElement';
+            atkElement.className = 'statisticElement';
+            atkSpecialElement.className = 'statisticElement';
+            defElement.className = 'statisticElement';
+            defSpecialElement.className = 'statisticElement';
+            speedElement.className = 'statisticElement';
+
+            // Adiciona texto aos elementos
             idElement.textContent = `#${ident}`;
-            nameElement.textContent = nomeCapitalizado; // Utiliza o nome capitalizado
+            nameElement.textContent = nomeCapitalizado;
             typeElement.textContent = typeCapitalizado;
             imageElement.src = image;
-            weightElement.innerHTML = `Weight: ${(weight / 10).toFixed(2)} Kg`;
-            heightElement.innerHTML = `Height: ${(height / 10).toFixed(2)} M`;
-            hpElement.textContent = `Health: ${health}`;
-            atkElement.textContent = `Attack: ${attack}`;
-            AtkSpecialElement.textContent = `Special Attack: ${attackSpecial}`;
-            defElement.textContent = `Defense: ${defense}`;
-            defSpecialElement.textContent = `Special Defense: ${defenseSpecial}`;
-            speedElement.textContent = `Speed: ${speed}`;
+            weightLabelElement.textContent = 'Weight:';
+            heightLabelElement.textContent = 'Height:';
+            hpLabelElement.textContent = 'Health:';
+            atkLabelElement.textContent = 'Attack:';
+            atkSpecialLabelElement.textContent = 'Special Attack:';
+            defLabelElement.textContent = 'Defense:';
+            defSpecialLabelElement.textContent = 'Special Defense:';
+            speedLabelElement.textContent = 'Speed:';
+
+            weightElement.innerHTML = `${(weight / 10).toFixed(2)} Kg`;
+            heightElement.innerHTML = `${(height / 10).toFixed(2)} M`;
+            hpElement.textContent = `${health}`;
+            atkElement.textContent = `${attack}`;
+            atkSpecialElement.textContent = `${attackSpecial}`;
+            defElement.textContent = `${defense}`;
+            defSpecialElement.textContent = `${defenseSpecial}`;
+            speedElement.textContent = `${speed}`;
+
+            // Define os valores máximos das barras de progresso
+            weightProgressBar.max = 100;
+            heightProgressBar.max = 100;
+            hpProgressBar.max = 100;
+            atkProgressBar.max = 100;
+            atkSpecialProgressBar.max = 100;
+            defProgressBar.max = 100;
+            defSpecialProgressBar.max = 100;
+            speedProgressBar.max = 100;
+
+            // Atribui os valores normalizados às barras de progresso
+            weightProgressBar.value = normalizedWeight;
+            heightProgressBar.value = normalizedHeight;
+            hpProgressBar.value = normalizedHealth;
+            atkProgressBar.value = normalizedAttack;
+            atkSpecialProgressBar.value = normalizedAttackSpecial;
+            defProgressBar.value = normalizedDefense;
+            defSpecialProgressBar.value = normalizedDefenseSpecial;
+            speedProgressBar.value = normalizedSpeed;
 
             // Adiciona os elementos criados ao elemento principal das informações do Pokemon
             contentMain.appendChild(contentLeft);
@@ -108,15 +185,42 @@ document.querySelector('form').addEventListener('submit', function (event) {
             contentRight.appendChild(imageElement);
             contentRight.appendChild(idElement);
             contentLeftTop.appendChild(nameElement);
-            contentLeftTop.appendChild(typeElement)
-            contentLeftBottom.appendChild(weightElement);
-            contentLeftBottom.appendChild(heightElement);
-            contentLeftBottom.appendChild(hpElement);
-            contentLeftBottom.appendChild(atkElement);
-            contentLeftBottom.appendChild(AtkSpecialElement);
-            contentLeftBottom.appendChild(defElement);
-            contentLeftBottom.appendChild(defSpecialElement);
-            contentLeftBottom.appendChild(speedElement);
+            contentLeftTop.appendChild(typeElement);
+
+            divWeight.appendChild(weightLabelElement);
+            divWeight.appendChild(weightProgressBar);
+            contentLeftBottom.appendChild(divWeight);
+            divHeight.appendChild(heightLabelElement);
+            divHeight.appendChild(heightProgressBar);
+            contentLeftBottom.appendChild(divHeight);
+            divHp.appendChild(hpLabelElement);
+            divHp.appendChild(hpProgressBar);
+            contentLeftBottom.appendChild(divHp);
+            divAtk.appendChild(atkLabelElement);
+            divAtk.appendChild(atkProgressBar);
+            contentLeftBottom.appendChild(divAtk);
+            divAtkSpecial.appendChild(atkSpecialLabelElement);
+            divAtkSpecial.appendChild(atkSpecialProgressBar);
+            contentLeftBottom.appendChild(divAtkSpecial);
+            divDef.appendChild(defLabelElement);
+            divDef.appendChild(defProgressBar);
+            contentLeftBottom.appendChild(divDef);
+            divDefSpecial.appendChild(defSpecialLabelElement);
+            divDefSpecial.appendChild(defSpecialProgressBar);
+            contentLeftBottom.appendChild(divDefSpecial);
+            divSpeed.appendChild(speedLabelElement);
+            divSpeed.appendChild(speedProgressBar);
+            contentLeftBottom.appendChild(divSpeed);
+
+            divWeight.appendChild(weightElement);
+            divHeight.appendChild(heightElement);
+            divHp.appendChild(hpElement);
+            divAtk.appendChild(atkElement);
+            divAtkSpecial.appendChild(atkSpecialElement);
+            divDef.appendChild(defElement);
+            divDefSpecial.appendChild(defSpecialElement);
+            divSpeed.appendChild(speedElement);
+
             sectionPokemonInfo.appendChild(contentMain);
 
             const typeShadows = {
@@ -146,15 +250,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 nameElement.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type]})`;
                 nameElement.style.color = typeShadows[type];
                 idElement.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type]})`;
-                /* contentMain.style.backgroundImage = 'url("grass 1.png")';
-                contentMain.style.backgroundRepeat = "no-repeat";
-                contentLeft.style.backgroundSize = "coven";
-                contentLeft.style.position = "center"; */
-                
-
             }
-
-
         })
         .catch((err) => {
             // Em caso de erro (Pokemon não encontrado ou erro na API), exibe uma mensagem de erro
