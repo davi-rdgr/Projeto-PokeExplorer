@@ -65,31 +65,34 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const contentLeftTopTittle = document.createElement('div');
             const iconImageElement = document.createElement('img');
             const contentLeftBottom = document.createElement('div');
+            const contentLeftBottomNames = document.createElement('div');
+            const contentLeftBottomResult = document.createElement('div')
+            const contentLeftBottomProgress = document.createElement('div')
             const nameElement = document.createElement('h1');
             const typeElement = document.createElement('p');
 
-            const divWeight = document.createElement('div');
+            //const divWeight = document.createElement('div');
             const weightLabelElement = document.createElement('p');
             const weightProgressBar = document.createElement('progress');
-            const divHeight = document.createElement('div');
+            //const divHeight = document.createElement('div');
             const heightLabelElement = document.createElement('p');
             const heightProgressBar = document.createElement('progress');
-            const divHp = document.createElement('div');
+            //const divHp = document.createElement('div');
             const hpLabelElement = document.createElement('p');
             const hpProgressBar = document.createElement('progress');
-            const divAtk = document.createElement('div');
+            //const divAtk = document.createElement('div');
             const atkLabelElement = document.createElement('p');
             const atkProgressBar = document.createElement('progress');
-            const divAtkSpecial = document.createElement('div');
+            //const divAtkSpecial = document.createElement('div');
             const atkSpecialLabelElement = document.createElement('p');
             const atkSpecialProgressBar = document.createElement('progress');
-            const divDef = document.createElement('div');
+            //const divDef = document.createElement('div');
             const defLabelElement = document.createElement('p');
             const defProgressBar = document.createElement('progress');
-            const divDefSpecial = document.createElement('div');
+            //const divDefSpecial = document.createElement('div');
             const defSpecialLabelElement = document.createElement('p');
             const defSpecialProgressBar = document.createElement('progress');
-            const divSpeed = document.createElement('div');
+            //const divSpeed = document.createElement('div');
             const speedLabelElement = document.createElement('p');
             const speedProgressBar = document.createElement('progress');
 
@@ -115,14 +118,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
             contentLeftBottom.className = 'contentLeftBottom';
             contentRight.className = 'contentRight';
 
-            divWeight.className = 'divPrintResult';
-            divHeight.className = 'divPrintResult';
-            divHp.className = 'divPrintResult';
-            divAtk.className = 'divPrintResult';
-            divAtkSpecial.className = 'divPrintResult';
-            divDef.className = 'divPrintResult';
-            divDefSpecial.className = 'divPrintResult';
-            divSpeed.className = 'divPrintResult';
 
             imageElement.className = 'imageElement';
             idElement.className = 'idElement';
@@ -214,6 +209,13 @@ document.querySelector('form').addEventListener('submit', function (event) {
             contentMain.appendChild(contentRight);
             contentLeft.appendChild(contentLeftTop);
             contentLeft.appendChild(contentLeftBottom);
+            contentLeftBottom.appendChild(contentLeftBottomNames)
+            contentLeftBottom.appendChild(contentLeftBottomProgress)
+            contentLeftBottom.appendChild(contentLeftBottomResult)
+
+            contentLeftBottomResult.className = 'contentLeftBottomNames'
+            contentLeftBottomNames.className = 'contentLeftBottomNames'
+            contentLeftBottomProgress.className = 'contentLeftBottomProgress'
 
             contentRight.appendChild(imageElement);
             contentRight.appendChild(idElement);
@@ -222,39 +224,34 @@ document.querySelector('form').addEventListener('submit', function (event) {
             contentLeftTopTittle.appendChild(iconImageElement);
             contentLeftTop.appendChild(typeElement);
 
-            divWeight.appendChild(weightLabelElement);
-            divWeight.appendChild(weightProgressBar);
-            contentLeftBottom.appendChild(divWeight);
-            divHeight.appendChild(heightLabelElement);
-            divHeight.appendChild(heightProgressBar);
-            contentLeftBottom.appendChild(divHeight);
-            divHp.appendChild(hpLabelElement);
-            divHp.appendChild(hpProgressBar);
-            contentLeftBottom.appendChild(divHp);
-            divAtk.appendChild(atkLabelElement);
-            divAtk.appendChild(atkProgressBar);
-            contentLeftBottom.appendChild(divAtk);
-            divAtkSpecial.appendChild(atkSpecialLabelElement);
-            divAtkSpecial.appendChild(atkSpecialProgressBar);
-            contentLeftBottom.appendChild(divAtkSpecial);
-            divDef.appendChild(defLabelElement);
-            divDef.appendChild(defProgressBar);
-            contentLeftBottom.appendChild(divDef);
-            divDefSpecial.appendChild(defSpecialLabelElement);
-            divDefSpecial.appendChild(defSpecialProgressBar);
-            contentLeftBottom.appendChild(divDefSpecial);
-            divSpeed.appendChild(speedLabelElement);
-            divSpeed.appendChild(speedProgressBar);
-            contentLeftBottom.appendChild(divSpeed);
+            
+            contentLeftBottomNames.appendChild(weightLabelElement)
+            contentLeftBottomNames.appendChild(heightLabelElement)
+            contentLeftBottomNames.appendChild(hpLabelElement)
+            contentLeftBottomNames.appendChild(atkLabelElement)
+            contentLeftBottomNames.appendChild(atkSpecialLabelElement)
+            contentLeftBottomNames.appendChild(defLabelElement)
+            contentLeftBottomNames.appendChild(defSpecialLabelElement)
+            contentLeftBottomNames.appendChild(speedLabelElement)
 
-            divWeight.appendChild(weightElement);
-            divHeight.appendChild(heightElement);
-            divHp.appendChild(hpElement);
-            divAtk.appendChild(atkElement);
-            divAtkSpecial.appendChild(atkSpecialElement);
-            divDef.appendChild(defElement);
-            divDefSpecial.appendChild(defSpecialElement);
-            divSpeed.appendChild(speedElement);
+            contentLeftBottomProgress.appendChild(weightProgressBar);
+            contentLeftBottomProgress.appendChild(heightProgressBar);
+            contentLeftBottomProgress.appendChild(hpProgressBar);
+            contentLeftBottomProgress.appendChild(atkProgressBar);
+            contentLeftBottomProgress.appendChild(atkSpecialProgressBar);
+            contentLeftBottomProgress.appendChild(defProgressBar);
+            contentLeftBottomProgress.appendChild(defSpecialProgressBar);
+            contentLeftBottomProgress.appendChild(speedProgressBar);
+
+            contentLeftBottomResult.appendChild(weightElement)
+            contentLeftBottomResult.appendChild(heightElement)
+            contentLeftBottomResult.appendChild(hpElement)
+            contentLeftBottomResult.appendChild(atkElement)
+            contentLeftBottomResult.appendChild(atkSpecialElement)
+            contentLeftBottomResult.appendChild(defElement)
+            contentLeftBottomResult.appendChild(defSpecialElement)
+            contentLeftBottomResult.appendChild(speedElement)
+
 
             sectionPokemonInfo.appendChild(contentMain);
 
