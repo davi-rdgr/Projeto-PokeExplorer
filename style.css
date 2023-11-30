@@ -50,10 +50,17 @@ main {
     height: 70px;
 }
 .contentLeftBottom {
-    width: 950px;
-
+    width: 1150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 160px;
 }
-
+.contentLeftBottomProgress {
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+}
 .divPrintResult {
     display: flex;
     justify-content: space-between;
@@ -100,13 +107,21 @@ main {
 }
 
 .typeElement {
-    color: #ffffff;
     font-size: 20px;
     margin-top: 10px;
 }
-
+.ElementString {
+    font-size: 30px;
+    width: 290px;
+}
 .statisticElement {
     font-size: 30px;
+}
+
+.contentLeftBottomNames, .contentLeftBottomNames {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
 }
 
 
