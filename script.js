@@ -43,7 +43,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const MAX_HEIGHT = 145;
             const MAX_HEALTH = 255; // Valor máximo possível para a estatística de saúde (HP)
             const MAX_ATTACK = 165;
-            const MAX_ATTACK_SPECIAL = 150;
+            const MAX_ATTACK_SPECIAL = 154;
             const MAX_DEFENSE = 230;
             const MAX_DEFENSE_SPECIAL = 255;
             const MAX_SPEED = 160;
@@ -62,8 +62,10 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const contentMain = document.createElement('div');
             const contentLeft = document.createElement('div');
             const contentLeftTop = document.createElement('div');
+            const contentLeftTopTittle = document.createElement('div');
+            const iconImageElement = document.createElement('img');
             const contentLeftBottom = document.createElement('div');
-            const nameElement = document.createElement('h2');
+            const nameElement = document.createElement('h1');
             const typeElement = document.createElement('p');
 
             const divWeight = document.createElement('div');
@@ -108,6 +110,8 @@ document.querySelector('form').addEventListener('submit', function (event) {
             contentMain.className = 'contentMain';
             contentLeft.className = 'contentLeft';
             contentLeftTop.className = 'contentLeftTop';
+            contentLeftTopTittle.className = 'contentLeftTittle'
+            iconImageElement.className = 'iconImageElement'
             contentLeftBottom.className = 'contentLeftBottom';
             contentRight.className = 'contentRight';
 
@@ -133,11 +137,30 @@ document.querySelector('form').addEventListener('submit', function (event) {
             defSpecialElement.className = 'statisticElement';
             speedElement.className = 'statisticElement';
 
+            weightProgressBar.className = 'progressBar'
+            heightProgressBar.className = 'progressBar'
+            hpProgressBar.className = 'progressBar'
+            atkProgressBar.className = 'progressBar'
+            atkSpecialProgressBar.className = 'progressBar'
+            defProgressBar.className = 'progressBar'
+            defSpecialProgressBar.className = 'progressBar'
+            speedProgressBar.className = 'progressBar'
+
+            weightProgressBar.style.backgroundColor = '#18181B'
+            heightProgressBar.style.backgroundColor = '#18181B'
+            hpProgressBar.style.backgroundColor = '#18181B'
+            atkProgressBar.style.backgroundColor = '#18181B'
+            atkSpecialProgressBar.style.backgroundColor = '#18181B'
+            defProgressBar.style.backgroundColor = '#18181B'
+            defSpecialProgressBar.style.backgroundColor = '#18181B'
+            speedProgressBar.style.backgroundColor = '#18181B'
+
             // Adiciona texto aos elementos
             idElement.textContent = `#${ident}`;
             nameElement.textContent = nomeCapitalizado;
             typeElement.textContent = typeCapitalizado;
             imageElement.src = image;
+
             weightLabelElement.textContent = 'Weight:';
             heightLabelElement.textContent = 'Height:';
             hpLabelElement.textContent = 'Health:';
@@ -146,6 +169,16 @@ document.querySelector('form').addEventListener('submit', function (event) {
             defLabelElement.textContent = 'Defense:';
             defSpecialLabelElement.textContent = 'Special Defense:';
             speedLabelElement.textContent = 'Speed:';
+
+            weightLabelElement.className = 'ElementString'
+            heightLabelElement.className = 'ElementString'
+            hpLabelElement.className = 'ElementString'
+            atkLabelElement.className = 'ElementString'
+            atkSpecialLabelElement.className = 'ElementString'
+            defLabelElement.className = 'ElementString'
+            defSpecialLabelElement.className = 'ElementString'
+            speedLabelElement.className = 'ElementString'
+
 
             weightElement.innerHTML = `${(weight / 10).toFixed(2)} Kg`;
             heightElement.innerHTML = `${(height / 10).toFixed(2)} M`;
@@ -184,7 +217,9 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
             contentRight.appendChild(imageElement);
             contentRight.appendChild(idElement);
-            contentLeftTop.appendChild(nameElement);
+            contentLeftTop.appendChild(contentLeftTopTittle)
+            contentLeftTopTittle.appendChild(nameElement);
+            contentLeftTopTittle.appendChild(iconImageElement);
             contentLeftTop.appendChild(typeElement);
 
             divWeight.appendChild(weightLabelElement);
@@ -224,32 +259,46 @@ document.querySelector('form').addEventListener('submit', function (event) {
             sectionPokemonInfo.appendChild(contentMain);
 
             const typeShadows = {
-                'electric': '#EED535',
-                'bug': '#729F3F',
-                'dark': '#707070',
-                'dragon': '#53A4CF',
-                'fairy': '#FDB9E9',
-                'fighting': '#D56723',
-                'fire': '#FD7D24',
-                'flying': '#3DC7EF',
-                'ghost': '#7B62A3',
-                'grass': '#9BCC50',
-                'ground': '#F7DE3F',
-                'ice': '#51C4E7',
-                'normal': '#A4ACAF',
-                'poison': '#B97FC9',
-                'psychic': '#F366B9',
-                'rock': '#A38C21',
-                'steel': '#9EB7B8',
-                'water': '#4592C4'
-            };
+                'electric': { 'color': '#EED535', 'filename': '/iconType/eletric.png' },
+                'bug': { 'color': '#729F3F', 'filename': '/iconType/bug.png' },
+                'dark': { 'color': '#707070', 'filename': '/iconType/dark.png' },
+                'dragon': { 'color': '#53A4CF', 'filename': '/iconType/dragon.png' },
+                'fairy': { 'color': '#FDB9E9', 'filename': '/iconType/fairy.png' },
+                'fighting': { 'color': '#D56723', 'filename': '/iconType/fighting.png' },
+                'fire': { 'color': '#FD7D24', 'filename': '/iconType/fire.png' },
+                'flying': { 'color': '#3DC7EF', 'filename': '/iconType/flying.png' },
+                'ghost': { 'color': '#7B62A3', 'filename': '/iconType/ghost.png' },
+                'grass': { 'color': '#9BCC50', 'filename': '/iconType/grass.png' },
+                'ground': { 'color': '#F7DE3F', 'filename': '/iconType/ground.png' },
+                'ice': { 'color': '#51C4E7', 'filename': '/iconType/ice.png' },
+                'normal': { 'color': '#A4ACAF', 'filename': '/iconType/normal.png' },
+                'poison': { 'color': '#B97FC9', 'filename': '/iconType/poison.png' },
+                'psychic': { 'color': '#F366B9', 'filename': '/iconType/psychic.png' },
+                'rock': { 'color': '#A38C21', 'filename': '/iconType/rock.png' },
+                'steel': { 'color': '#9EB7B8', 'filename': '/iconType/steel.png' },
+                'water': { 'color': '#4592C4', 'filename': '/iconType/water.png' }
+            }
+
+
 
             // Verifica se o tipo existe no objeto antes de aplicar a sombra
             if (typeShadows.hasOwnProperty(type)) {
-                imageElement.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type]})`;
-                nameElement.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type]})`;
-                nameElement.style.color = typeShadows[type];
-                idElement.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type]})`;
+                imageElement.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type].color})`;
+                nameElement.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type].color})`;
+                nameElement.style.color = typeShadows[type].color;
+                idElement.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
+                iconImageElement.src = typeShadows[type].filename;
+
+                const wordsColor = document.querySelectorAll('.ElementString');
+                wordsColor.forEach(wordsColor => {
+                    wordsColor.style.color = typeShadows[type].color;
+                });
+
+                const resultColor = document.querySelectorAll('.statisticElement')
+                resultColor.forEach(resultColor => {
+                    resultColor.style.color = typeShadows[type].color;
+                })
+
             }
         })
         .catch((err) => {
