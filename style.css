@@ -26,41 +26,49 @@ main {
 }
 
 .contentMain {
-    width: 1750px;
-    height: 850px;
+    width: 80%;
+    height: 800px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 50px;
 
+}
+.pokebola-icon {
+    height: 50px;
+}
+.header-div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .contentLeft {
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 180px;
 }
+
 .contentLeftTittle {
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
 .iconImageElement {
     height: 70px;
 }
+
 .contentLeftBottom {
-    width: 1150px;
+    width: 80%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 160px;
 }
-.contentLeftBottomProgress {
-    display: flex;
-    flex-direction: column;
-    gap: 29px;
-}
+
 .divPrintResult {
     display: flex;
     justify-content: space-between;
@@ -110,24 +118,33 @@ main {
     font-size: 20px;
     margin-top: 10px;
 }
+
 .ElementString {
     font-size: 30px;
     width: 290px;
 }
+
 .statisticElement {
     font-size: 30px;
 }
 
-.contentLeftBottomNames, .contentLeftBottomNames {
+.contentLeftBottomProgress {
     display: flex;
     flex-direction: column;
-    gap: 23px;
+    gap: 39px;
+}
+
+.contentLeftBottomNames,
+.contentLeftBottomResults {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
 }
 
 
 .headerPosition {
     position: absolute;
-    left: 7%;
+    left: 9.9%;
     top: 2%;
 }
 
@@ -163,24 +180,3 @@ input:focus {
     text-transform: none;
     outline: none;
 }
-
-/* input {
-    background-color: #18181B;
-    color: white;
-    height: 40px;
-    width: 200px;
-    border-radius: 10px;
-    border: 1px solid white;
-    padding: 10px;
-    font-size: 18px;
-}
-input:focus {
-    text-transform: none;
-    outline: none;
-}
-
-button {
-    font-size: 18px;
-    height: 40px;
-    width: 60px;
-} */

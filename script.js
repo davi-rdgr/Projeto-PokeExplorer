@@ -175,8 +175,8 @@ document.querySelector('form').addEventListener('submit', function (event) {
             speedLabelElement.className = 'ElementString'
 
 
-            weightElement.innerHTML = `${(weight / 10).toFixed(2)} Kg`;
-            heightElement.innerHTML = `${(height / 10).toFixed(2)} M`;
+            weightElement.innerHTML = `${(weight / 10).toFixed(2)}Kg`;
+            heightElement.innerHTML = `${(height / 10).toFixed(2)}M`;
             hpElement.textContent = `${health}`;
             atkElement.textContent = `${attack}`;
             atkSpecialElement.textContent = `${attackSpecial}`;
@@ -213,7 +213,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
             contentLeftBottom.appendChild(contentLeftBottomProgress)
             contentLeftBottom.appendChild(contentLeftBottomResult)
 
-            contentLeftBottomResult.className = 'contentLeftBottomNames'
+            contentLeftBottomResult.className = 'contentLeftBottomResults'
             contentLeftBottomNames.className = 'contentLeftBottomNames'
             contentLeftBottomProgress.className = 'contentLeftBottomProgress'
 
