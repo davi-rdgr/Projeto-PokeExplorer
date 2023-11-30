@@ -9,7 +9,7 @@
 
 body {
     background-color: #18181B;
-    color: white;
+    color: #ffffff;
     height: 100vh;
     width: 100vw;
 }
@@ -75,7 +75,7 @@ main {
 .progressBar[value] {
     -webkit-appearance: none;
     appearance: none;
-    border: 1px solid white;
+    border: 1px solid #ffffff;
     border-radius: 5px;
     width: 400px;
     height: 23px;
@@ -149,9 +149,9 @@ form {
 
 form input {
     width: 100%;
-    color: white;
+    color: #ffffff;
     background-color: #18181B;
-    border: 1px solid white;
+    border: 1px solid #EF4036;
     border-radius: 50px;
     padding: 1rem 1rem;
     font-size: 17px;
