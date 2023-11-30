@@ -26,17 +26,19 @@ main {
 }
 
 .contentMain {
-    width: 80%;
-    height: 800px;
+    width: 84%;
+    height: 720px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
 }
+
 .pokebola-icon {
-    height: 50px;
+    height: 45px;
 }
+
 .header-div {
     display: flex;
     align-items: center;
@@ -48,7 +50,7 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 180px;
+    gap: 160px;
 }
 
 .contentLeftTittle {
@@ -58,7 +60,7 @@ main {
 }
 
 .iconImageElement {
-    height: 70px;
+    height: 60px;
 }
 
 .contentLeftBottom {
@@ -66,17 +68,9 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 160px;
+    gap: 150px;
 }
 
-.divPrintResult {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 30px;
-    margin-top: 25px;
-
-}
 
 .progressBar[value] {
     -webkit-appearance: none;
@@ -84,7 +78,7 @@ main {
     border: 1px solid white;
     border-radius: 5px;
     width: 400px;
-    height: 25px;
+    height: 23px;
 }
 
 .progressBar::-moz-progress-bar {
@@ -101,50 +95,50 @@ main {
 }
 
 .imageElement {
-    height: 500px;
+    height: 450px;
 }
 
 .idElement {
-    font-size: 200px;
+    font-size: 180px;
     color: rgb(173, 173, 173);
 }
 
 .nameElement {
-    font-size: 80px;
+    font-size: 73px;
 
 }
 
 .typeElement {
-    font-size: 20px;
+    font-size: 22px;
     margin-top: 10px;
 }
 
 .ElementString {
-    font-size: 30px;
+    font-size: 26px;
     width: 290px;
 }
 
 .statisticElement {
-    font-size: 30px;
+    font-size: 26px;
 }
 
 .contentLeftBottomProgress {
     display: flex;
     flex-direction: column;
-    gap: 39px;
+    gap: 34px;
 }
 
 .contentLeftBottomNames,
 .contentLeftBottomResults {
     display: flex;
     flex-direction: column;
-    gap: 33px;
+    gap: 30px;
 }
 
 
 .headerPosition {
     position: absolute;
-    left: 9.9%;
+    left: 8%;
     top: 2%;
 }
 
@@ -179,4 +173,12 @@ form button {
 input:focus {
     text-transform: none;
     outline: none;
+}
+
+@media (min-width: 2260px) {
+
+    .contentMain {
+        width: 1897px;
+    }
+
 }
