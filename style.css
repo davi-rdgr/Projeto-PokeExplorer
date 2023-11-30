@@ -34,9 +34,11 @@ main {
     justify-content: space-between;
 
 }
+
 .pokebola-icon {
     height: 50px;
 }
+
 .header-div {
     display: flex;
     align-items: center;

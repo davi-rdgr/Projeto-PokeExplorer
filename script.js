@@ -41,7 +41,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
             // Constantes para normalizar os valores
             const MAX_WEIGHT = 2999;
             const MAX_HEIGHT = 145;
-            const MAX_HEALTH = 255; // Valor máximo possível para a estatística de saúde (HP)
+            const MAX_HEALTH = 255;
             const MAX_ATTACK = 165;
             const MAX_ATTACK_SPECIAL = 154;
             const MAX_DEFENSE = 230;
@@ -70,32 +70,22 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const contentLeftBottomProgress = document.createElement('div')
             const nameElement = document.createElement('h1');
             const typeElement = document.createElement('p');
-
-            //const divWeight = document.createElement('div');
             const weightLabelElement = document.createElement('p');
             const weightProgressBar = document.createElement('progress');
-            //const divHeight = document.createElement('div');
             const heightLabelElement = document.createElement('p');
             const heightProgressBar = document.createElement('progress');
-            //const divHp = document.createElement('div');
             const hpLabelElement = document.createElement('p');
             const hpProgressBar = document.createElement('progress');
-            //const divAtk = document.createElement('div');
             const atkLabelElement = document.createElement('p');
             const atkProgressBar = document.createElement('progress');
-            //const divAtkSpecial = document.createElement('div');
             const atkSpecialLabelElement = document.createElement('p');
             const atkSpecialProgressBar = document.createElement('progress');
-            //const divDef = document.createElement('div');
             const defLabelElement = document.createElement('p');
             const defProgressBar = document.createElement('progress');
-            //const divDefSpecial = document.createElement('div');
             const defSpecialLabelElement = document.createElement('p');
             const defSpecialProgressBar = document.createElement('progress');
-            //const divSpeed = document.createElement('div');
             const speedLabelElement = document.createElement('p');
             const speedProgressBar = document.createElement('progress');
-
             const weightElement = document.createElement('p');
             const heightElement = document.createElement('p');
             const hpElement = document.createElement('p');
@@ -104,7 +94,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const defElement = document.createElement('p');
             const defSpecialElement = document.createElement('p');
             const speedElement = document.createElement('p');
-
             const contentRight = document.createElement('div');
             const imageElement = document.createElement('img');
             const idElement = document.createElement('p');
@@ -117,7 +106,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
             iconImageElement.className = 'iconImageElement'
             contentLeftBottom.className = 'contentLeftBottom';
             contentRight.className = 'contentRight';
-
 
             imageElement.className = 'imageElement';
             idElement.className = 'idElement';
@@ -174,7 +162,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
             defSpecialLabelElement.className = 'ElementString'
             speedLabelElement.className = 'ElementString'
 
-
             weightElement.innerHTML = `${(weight / 10).toFixed(2)}Kg`;
             heightElement.innerHTML = `${(height / 10).toFixed(2)}M`;
             hpElement.textContent = `${health}`;
@@ -224,7 +211,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
             contentLeftTopTittle.appendChild(iconImageElement);
             contentLeftTop.appendChild(typeElement);
 
-            
             contentLeftBottomNames.appendChild(weightLabelElement)
             contentLeftBottomNames.appendChild(heightLabelElement)
             contentLeftBottomNames.appendChild(hpLabelElement)
@@ -252,7 +238,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
             contentLeftBottomResult.appendChild(defSpecialElement)
             contentLeftBottomResult.appendChild(speedElement)
 
-
             sectionPokemonInfo.appendChild(contentMain);
 
             const typeShadows = {
@@ -275,8 +260,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 'steel': { 'color': '#9EB7B8', 'filename': '/iconType/steel.png' },
                 'water': { 'color': '#4592C4', 'filename': '/iconType/water.png' }
             }
-
-
 
             // Verifica se o tipo existe no objeto antes de aplicar a sombra
             if (typeShadows.hasOwnProperty(type)) {
