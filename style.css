@@ -1,9 +1,3 @@
-/* contentMain
-contentLeft
-contentLeftTop
-contentLeftBottom
-contentRight
- */
 * {
     box-sizing: border-box;
     padding: 0px;
@@ -33,13 +27,13 @@ main {
 
 .contentMain {
     width: 1750px;
-    height: 800px;
+    height: 850px;
     margin: 0 auto;
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 50px;
+
 }
 
 .contentLeft {
@@ -47,16 +41,43 @@ main {
     flex-direction: column;
     gap: 180px;
 }
+.contentLeftTittle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.iconImageElement {
+    height: 70px;
+}
 .contentLeftBottom {
     width: 950px;
-    /* o padrão é 800 */
+
 }
+
 .divPrintResult {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 30px;
-    margin-top: 5px;
+    margin-top: 25px;
+
 }
+
+.progressBar[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 400px;
+    height: 25px;
+}
+
+.progressBar::-moz-progress-bar {
+    background-color: rgb(173, 173, 173);
+}
+
+
+
 .contentRight {
     display: flex;
     flex-direction: column;
@@ -75,8 +96,9 @@ main {
 
 .nameElement {
     font-size: 80px;
-    
+
 }
+
 .typeElement {
     color: #ffffff;
     font-size: 20px;
@@ -84,11 +106,65 @@ main {
 }
 
 .statisticElement {
-    margin-bottom: 22px;
     font-size: 30px;
 }
 
 
 .headerPosition {
     position: absolute;
+    left: 7%;
+    top: 2%;
 }
+
+form {
+    width: 250px;
+    position: relative;
+}
+
+form input {
+    width: 100%;
+    color: white;
+    background-color: #18181B;
+    border: 1px solid white;
+    border-radius: 50px;
+    padding: 1rem 1rem;
+    font-size: 17px;
+}
+
+form button {
+    background-color: #18181B;
+    border: none;
+    border-radius: 50px;
+    height: 80%;
+    aspect-ratio: 1;
+    position: absolute;
+    right: 5px;
+    top: 10%;
+    cursor: pointer;
+}
+
+input:focus {
+    text-transform: none;
+    outline: none;
+}
+
+/* input {
+    background-color: #18181B;
+    color: white;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 18px;
+}
+input:focus {
+    text-transform: none;
+    outline: none;
+}
+
+button {
+    font-size: 18px;
+    height: 40px;
+    width: 60px;
+} */
