@@ -50,7 +50,8 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 160px;
+    gap: 15%;
+    /* gap: 160px; */
 }
 
 .contentLeftTittle {
@@ -68,7 +69,8 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 150px;
+    gap: 2%;
+    /* gap: 150px; */
 }
 
 
