@@ -241,24 +241,24 @@ document.querySelector('form').addEventListener('submit', function (event) {
             sectionPokemonInfo.appendChild(contentMain);
 
             const typeShadows = {
-                'electric': { 'color': '#EED535', 'filename': '/iconType/eletric.png' },
-                'bug': { 'color': '#729F3F', 'filename': '/iconType/bug.png' },
-                'dark': { 'color': '#707070', 'filename': '/iconType/dark.png' },
-                'dragon': { 'color': '#53A4CF', 'filename': '/iconType/dragon.png' },
-                'fairy': { 'color': '#FDB9E9', 'filename': '/iconType/fairy.png' },
-                'fighting': { 'color': '#D56723', 'filename': '/iconType/fighting.png' },
-                'fire': { 'color': '#FD7D24', 'filename': '/iconType/fire.png' },
-                'flying': { 'color': '#3DC7EF', 'filename': '/iconType/flying.png' },
-                'ghost': { 'color': '#7B62A3', 'filename': '/iconType/ghost.png' },
-                'grass': { 'color': '#9BCC50', 'filename': '/iconType/grass.png' },
-                'ground': { 'color': '#F7DE3F', 'filename': '/iconType/ground.png' },
-                'ice': { 'color': '#51C4E7', 'filename': '/iconType/ice.png' },
-                'normal': { 'color': '#A4ACAF', 'filename': '/iconType/normal.png' },
-                'poison': { 'color': '#B97FC9', 'filename': '/iconType/poison.png' },
-                'psychic': { 'color': '#F366B9', 'filename': '/iconType/psychic.png' },
-                'rock': { 'color': '#A38C21', 'filename': '/iconType/rock.png' },
-                'steel': { 'color': '#9EB7B8', 'filename': '/iconType/steel.png' },
-                'water': { 'color': '#4592C4', 'filename': '/iconType/water.png' }
+                'electric': { 'color': '#EED535', 'filename': 'iconType/eletric.png' },
+                'bug': { 'color': '#729F3F', 'filename': 'iconType/bug.png' },
+                'dark': { 'color': '#707070', 'filename': 'iconType/dark.png' },
+                'dragon': { 'color': '#53A4CF', 'filename': 'iconType/dragon.png' },
+                'fairy': { 'color': '#FDB9E9', 'filename': 'iconType/fairy.png' },
+                'fighting': { 'color': '#D56723', 'filename': 'iconType/fighting.png' },
+                'fire': { 'color': '#FD7D24', 'filename': 'iconType/fire.png' },
+                'flying': { 'color': '#3DC7EF', 'filename': 'iconType/flying.png' },
+                'ghost': { 'color': '#7B62A3', 'filename': 'iconType/ghost.png' },
+                'grass': { 'color': '#9BCC50', 'filename': 'iconType/grass.png' },
+                'ground': { 'color': '#F7DE3F', 'filename': 'iconType/ground.png' },
+                'ice': { 'color': '#51C4E7', 'filename': 'iconType/ice.png' },
+                'normal': { 'color': '#A4ACAF', 'filename': 'iconType/normal.png' },
+                'poison': { 'color': '#B97FC9', 'filename': 'iconType/poison.png' },
+                'psychic': { 'color': '#F366B9', 'filename': 'iconType/psychic.png' },
+                'rock': { 'color': '#A38C21', 'filename': 'iconType/rock.png' },
+                'steel': { 'color': '#9EB7B8', 'filename': 'iconType/steel.png' },
+                'water': { 'color': '#4592C4', 'filename': 'iconType/water.png' }
             }
 
             // Verifica se o tipo existe no objeto antes de aplicar a sombra
