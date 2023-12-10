@@ -268,8 +268,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 nameElement.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type].color})`;
                 nameElement.style.color = typeShadows[type].color;
                 idElement.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
-                let currentURL = window.location.href
-                iconImageElement.src = currentURL + typeShadows[type].filename;
+                iconImageElement.src = typeShadows[type].filename;
 
                 const wordsColor = document.querySelectorAll('.ElementString');
                 wordsColor.forEach(wordsColor => {
