@@ -269,7 +269,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 nameElement.style.color = typeShadows[type].color;
                 idElement.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
                 let currentURL = window.location.href
-                iconImageElement.src = currentURL + '/' + typeShadows[type].filename;
+                iconImageElement.src = currentURL + typeShadows[type].filename;
 
                 const wordsColor = document.querySelectorAll('.ElementString');
                 wordsColor.forEach(wordsColor => {
