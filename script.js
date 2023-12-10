@@ -258,7 +258,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 'psychic': { 'color': '#F366B9', 'filename': 'iconType/psychic.png' },
                 'rock': { 'color': '#A38C21', 'filename': 'iconType/rock.png' },
                 'steel': { 'color': '#9EB7B8', 'filename': 'iconType/steel.png' },
-                'water': { 'color': '#4592C4', 'filename': 'iconType/water.png' }
+                'water': { 'color': '#4592C4', 'filename': 'water.png' }
             }
 
 
