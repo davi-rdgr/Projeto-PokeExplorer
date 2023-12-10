@@ -261,13 +261,15 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 'water': { 'color': '#4592C4', 'filename': 'iconType/water.png' }
             }
 
+
             // Verifica se o tipo existe no objeto antes de aplicar a sombra
             if (typeShadows.hasOwnProperty(type)) {
                 imageElement.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type].color})`;
                 nameElement.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type].color})`;
                 nameElement.style.color = typeShadows[type].color;
                 idElement.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
-                iconImageElement.src = typeShadows[type].filename;
+                let currentURL = window.location.href
+                iconImageElement.src = currentURL + '/' + typeShadows[type].filename;
 
                 const wordsColor = document.querySelectorAll('.ElementString');
                 wordsColor.forEach(wordsColor => {
