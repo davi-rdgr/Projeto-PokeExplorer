@@ -2,9 +2,7 @@
 function capitalizarPrimeiraLetra(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
-let num = 8
-num **= 2
-console.log(num)
+
 // Adiciona um ouvinte de eventos para o evento de envio do formulário
 document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault(); // Evita o envio padrão do formulário que recarregaria a página
