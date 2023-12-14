@@ -4,35 +4,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemons com API</title>
+    <title>Poke Explorer</title>
     <link rel="stylesheet" href="style.css">
-    <style>
 
-    </style>
 </head>
 
 <body>
-    <header class="headerPosition">
-        <div class="header-div">
-            <img class="pokebola-icon" src="PokeIcon.png" alt="">
-            <form>
-                <label for="pokemonName"></label>
-                <input type="text" id="pokemonName" required placeholder="Search Pokemon!">
-                <button type="submit">
-                    <?xml version="1.0" encoding="utf-8"?>
-                    <svg width="50px" height="50px" viewBox="-7 2 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#EF4036" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-            </form>
+    <div class="headerShadowDiv">
+        <div class="headerInclude">
+            <header class="headerPosition">
+                <div class="header-div">
+                    <form>
+                        <label for="pokemonName"></label>
+                        <input type="text" id="pokemonName" required placeholder="Search Pokemon!">
+                        <button type="submit">
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <svg width="50px" height="50px" viewBox="-7 2 30 33" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#EF4036" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </form>
+                    <div class="headerLogotipo">
+                        <img class="pokebola-icon" src="/937d657f6b904b2a09d574a3544a8732.png" alt="">
+                        <span class="pokedex">Sua Pokedex portátil !</span>
+                    </div>
+                    <div class="navbarSpace"></div>
+                </div>
+                <div></div>
+            </header>
+            <main>
+                <section class="sectionPokemonInfo" id="sectionPokemonInfo">
+
+                    <div class="content-topside">
+                        <div class="content-titleType">
+                            <p class="pokemon-name"></p>
+                            <img class="pokebola-icon imagePokemonType" src="" alt="">
+                        </div>
+                        <div class="">
+                            <p class="pokemonType"></p>
+                        </div>
+                    </div>
+
+                    <div class="content-main">
+                        <div class="content-attributes">
+
+                            <div class="content-weight content-attributes-general">
+                                <span class="att-weight att-color"></span>
+                                <div class="progress-container">
+                                    <div class="progressWeight progress"></div>
+                                </div>
+                                <span class="att-weight-result att-color"></span>
+                            </div>
+
+                            <div class="content-height content-attributes-general">
+                                <span class="att-height att-color"></span>
+                                <div class="progress-container">
+                                    <div class="progressHeight progress"></div>
+                                </div>
+                                <span class="att-height-result att-color"></span>
+                            </div>
+
+                            <div class="content-health content-attributes-general">
+                                <span class="att-health att-color"></span>
+                                <div class="progress-container">
+                                    <div class="progressHealth progress"></div>
+                                </div>
+                                <span class="att-health-result att-color"></span>
+                            </div>
+
+                            <div class="content-attack content-attributes-general">
+                                <span class="att-attack att-color"></span>
+                                <div class="progress-container">
+                                    <div class="progressAttack progress"></div>
+                                </div>
+                                <span class="att-attack-result att-color"></span>
+                            </div>
+
+                            <div class="content-specialAttack content-attributes-general">
+                                <span class="att-specialAttack att-color"></span>
+                                <div class="progress-container">
+                                    <div class="progressSpecialAttack progress"></div>
+                                </div>
+                                <span class="att-specialAttack-result att-color"></span>
+                            </div>
+
+                            <div class="content-defense content-attributes-general">
+                                <span class="att-defense att-color"></span>
+                                <div class="progress-container">
+                                    <div class="progressDefense progress"></div>
+                                </div>
+                                <span class="att-defense-result att-color"></span>
+                            </div>
+
+                            <div class="content-specialDefense content-attributes-general">
+                                <span class="att-specialDefense att-color"></span>
+                                <div class="progress-container">
+                                    <div class="progressSpecialDefense progress"></div>
+                                </div>
+                                <span class="att-specialDefense-result att-color"></span>
+                            </div>
+
+                            <div class="content-speed content-attributes-general">
+                                <span class="att-speed att-color"></span>
+                                <div class="progress-container">
+                                    <div class="progressSpeed progress"></div>
+                                </div>
+                                <span class="att-speed-result att-color"></span>
+                            </div>
+                        </div>
+                        <div class="content-imageId">
+                            <img class="imagePokemon" src="" alt="">
+                            <p class="imageID" id=""></p>
+                        </div>
+                    </div>
+
+                </section>
         </div>
-        <div></div>
-    </header>
-    <main>
-        <section class="sectionPokemonInfo" id="sectionPokemonInfo"></section>
         <script src="script.js"></script>
-    </main>
+        </main>
+    </div>
 </body>
 
 </html>

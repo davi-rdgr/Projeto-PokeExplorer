@@ -3,6 +3,10 @@ function capitalizarPrimeiraLetra(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+const content = document.querySelector('.content-main')
+content.style.display = 'none'
+
+
 // Adiciona um ouvinte de eventos para o evento de envio do formulário
 document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault(); // Evita o envio padrão do formulário que recarregaria a página
@@ -16,13 +20,15 @@ document.querySelector('form').addEventListener('submit', function (event) {
         .then((res) => res.json()) // Converte a resposta em formato JSON
         .then(data => {
             // Obtém o elemento onde as informações do Pokemon serão exibidas
-            const sectionPokemonInfo = document.getElementById('sectionPokemonInfo');
+            /* const sectionPokemonInfo = document.getElementById('sectionPokemonInfo');
 
-            // Remove o conteúdo anterior, se houver
+            // Remove o conteúdo anterior se houver
             if (sectionPokemonInfo.firstChild) {
                 sectionPokemonInfo.removeChild(sectionPokemonInfo.firstChild);
-            }
+            } */
+            content.style.display = 'flex'
 
+            // recebendo o valor da API e armazenando
             const name = data.name;
             const nomeCapitalizado = capitalizarPrimeiraLetra(name);
             const ident = data.id;
@@ -38,259 +44,168 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const attackSpecial = data.stats.find(stat => stat.stat.name === 'special-attack').base_stat;
             const defenseSpecial = data.stats.find(stat => stat.stat.name === 'special-defense').base_stat;
 
-            // Constantes para normalizar os valores
-            const MAX_WEIGHT = 2999;
-            const MAX_HEIGHT = 145;
-            const MAX_HEALTH = 255;
-            const MAX_ATTACK = 165;
-            const MAX_ATTACK_SPECIAL = 154;
-            const MAX_DEFENSE = 230;
-            const MAX_DEFENSE_SPECIAL = 255;
-            const MAX_SPEED = 160;
+            // armazenando o container que receberá o nome, ícone do tipo e tipo.
+            // enviando os atributos vindos da API para o container no HTML.
 
-            // Normaliza os valores para a faixa de 0 a 100
-            const normalizedWeight = (weight / MAX_WEIGHT) * 100;
-            const normalizedHeight = (height / MAX_HEIGHT) * 100;
-            const normalizedHealth = (health / MAX_HEALTH) * 100;
-            const normalizedAttack = (attack / MAX_ATTACK) * 100;
-            const normalizedAttackSpecial = (attackSpecial / MAX_ATTACK_SPECIAL) * 100;
-            const normalizedDefense = (defense / MAX_DEFENSE) * 100;
-            const normalizedDefenseSpecial = (defenseSpecial / MAX_DEFENSE_SPECIAL) * 100;
-            const normalizedSpeed = (speed / MAX_SPEED) * 100;
+            const pokemonNameH1 = document.querySelector('.pokemon-name');
+            const imagePokemonType = document.querySelector('.imagePokemonType');
+            const pokemonType = document.querySelector('.pokemonType');
 
-            // Cria elementos HTML para exibir as informações do Pokemon
-            const contentMain = document.createElement('div');
-            const contentLeft = document.createElement('div');
-            const contentLeftTop = document.createElement('div');
-            const contentLeftTopTittle = document.createElement('div');
-            const iconImageElement = document.createElement('img');
-            const contentLeftBottom = document.createElement('div');
-            const contentLeftBottomNames = document.createElement('div');
-            const contentLeftBottomResult = document.createElement('div')
-            const contentLeftBottomProgress = document.createElement('div')
-            const nameElement = document.createElement('h1');
-            const typeElement = document.createElement('p');
-            const weightLabelElement = document.createElement('p');
-            const weightProgressBar = document.createElement('progress');
-            const heightLabelElement = document.createElement('p');
-            const heightProgressBar = document.createElement('progress');
-            const hpLabelElement = document.createElement('p');
-            const hpProgressBar = document.createElement('progress');
-            const atkLabelElement = document.createElement('p');
-            const atkProgressBar = document.createElement('progress');
-            const atkSpecialLabelElement = document.createElement('p');
-            const atkSpecialProgressBar = document.createElement('progress');
-            const defLabelElement = document.createElement('p');
-            const defProgressBar = document.createElement('progress');
-            const defSpecialLabelElement = document.createElement('p');
-            const defSpecialProgressBar = document.createElement('progress');
-            const speedLabelElement = document.createElement('p');
-            const speedProgressBar = document.createElement('progress');
-            const weightElement = document.createElement('p');
-            const heightElement = document.createElement('p');
-            const hpElement = document.createElement('p');
-            const atkElement = document.createElement('p');
-            const atkSpecialElement = document.createElement('p');
-            const defElement = document.createElement('p');
-            const defSpecialElement = document.createElement('p');
-            const speedElement = document.createElement('p');
-            const contentRight = document.createElement('div');
-            const imageElement = document.createElement('img');
-            const idElement = document.createElement('p');
+            pokemonNameH1.innerHTML = nomeCapitalizado;
+            pokemonType.innerHTML = typeCapitalizado;
 
-            // Adiciona classes aos elementos
-            contentMain.className = 'contentMain';
-            contentLeft.className = 'contentLeft';
-            contentLeftTop.className = 'contentLeftTop';
-            contentLeftTopTittle.className = 'contentLeftTittle'
-            iconImageElement.className = 'iconImageElement'
-            contentLeftBottom.className = 'contentLeftBottom';
-            contentRight.className = 'contentRight';
+            // armazenando o container que receberá os nomes dos atributos.
+            // enviando para o html o nome dos atributos quando a consulta for realizada.
 
-            imageElement.className = 'imageElement';
-            idElement.className = 'idElement';
-            nameElement.className = 'nameElement';
-            typeElement.className = 'typeElement';
-            weightElement.className = 'statisticElement';
-            heightElement.className = 'statisticElement';
-            hpElement.className = 'statisticElement';
-            atkElement.className = 'statisticElement';
-            atkSpecialElement.className = 'statisticElement';
-            defElement.className = 'statisticElement';
-            defSpecialElement.className = 'statisticElement';
-            speedElement.className = 'statisticElement';
+            const attweight = document.querySelector('.att-weight');
+            const attheight = document.querySelector('.att-height');
+            const atthealth = document.querySelector('.att-health');
+            const attattack = document.querySelector('.att-attack');
+            const attspecialAttack = document.querySelector('.att-specialAttack')
+            const attdefense = document.querySelector('.att-defense')
+            const attspecialDefense = document.querySelector('.att-specialDefense')
+            const attspeed = document.querySelector('.att-speed')
 
-            weightProgressBar.className = 'progressBar'
-            heightProgressBar.className = 'progressBar'
-            hpProgressBar.className = 'progressBar'
-            atkProgressBar.className = 'progressBar'
-            atkSpecialProgressBar.className = 'progressBar'
-            defProgressBar.className = 'progressBar'
-            defSpecialProgressBar.className = 'progressBar'
-            speedProgressBar.className = 'progressBar'
+            attweight.textContent = 'Weight'
+            attheight.textContent = 'Height'
+            atthealth.textContent = 'Health'
+            attattack.textContent = 'Attack'
+            attspecialAttack.textContent = 'Special Attack'
+            attdefense.textContent = 'Defense'
+            attspecialDefense.textContent = 'Special Defense'
+            attspeed.textContent = 'Speed'
 
-            weightProgressBar.style.backgroundColor = '#18181B'
-            heightProgressBar.style.backgroundColor = '#18181B'
-            hpProgressBar.style.backgroundColor = '#18181B'
-            atkProgressBar.style.backgroundColor = '#18181B'
-            atkSpecialProgressBar.style.backgroundColor = '#18181B'
-            defProgressBar.style.backgroundColor = '#18181B'
-            defSpecialProgressBar.style.backgroundColor = '#18181B'
-            speedProgressBar.style.backgroundColor = '#18181B'
+            // armazenando o container que receberá os atributos.
+            // enviando os atributos vindos da API para o container no HTML.
 
-            // Adiciona texto aos elementos
-            idElement.textContent = `#${ident}`;
-            nameElement.textContent = nomeCapitalizado;
-            typeElement.textContent = typeCapitalizado;
-            imageElement.src = image;
+            const attweightresult = document.querySelector('.att-weight-result')
+            const attheightresult = document.querySelector('.att-height-result')
+            const atthealthresult = document.querySelector('.att-health-result')
+            const attattackresult = document.querySelector('.att-attack-result')
+            const attspecialattackresult = document.querySelector('.att-specialAttack-result')
+            const attdefenseresult = document.querySelector('.att-defense-result')
+            const attspecialdefenseresult = document.querySelector('.att-specialDefense-result')
+            const attspeedresult = document.querySelector('.att-speed-result')
 
-            weightLabelElement.textContent = 'Weight:';
-            heightLabelElement.textContent = 'Height:';
-            hpLabelElement.textContent = 'Health:';
-            atkLabelElement.textContent = 'Attack:';
-            atkSpecialLabelElement.textContent = 'Special Attack:';
-            defLabelElement.textContent = 'Defense:';
-            defSpecialLabelElement.textContent = 'Special Defense:';
-            speedLabelElement.textContent = 'Speed:';
+            attweightresult.innerHTML = `${(weight / 10).toFixed(2)}Kg`;
+            attheightresult.innerHTML = `${(height / 10).toFixed(2)}M`;
+            atthealthresult.innerHTML = health;
+            attattackresult.innerHTML = attack;
+            attspecialattackresult.innerHTML = attackSpecial;
+            attdefenseresult.innerHTML = defense;
+            attspecialdefenseresult.innerHTML = defenseSpecial;
+            attspeedresult.innerHTML = speed;
 
-            weightLabelElement.className = 'ElementString'
-            heightLabelElement.className = 'ElementString'
-            hpLabelElement.className = 'ElementString'
-            atkLabelElement.className = 'ElementString'
-            atkSpecialLabelElement.className = 'ElementString'
-            defLabelElement.className = 'ElementString'
-            defSpecialLabelElement.className = 'ElementString'
-            speedLabelElement.className = 'ElementString'
+            // armazena a imagem do Pokemon e o ID.
+            // envia a imagem do Pokemon e o ID para o html.
 
-            weightElement.innerHTML = `${(weight / 10).toFixed(2)}Kg`;
-            heightElement.innerHTML = `${(height / 10).toFixed(2)}M`;
-            hpElement.textContent = `${health}`;
-            atkElement.textContent = `${attack}`;
-            atkSpecialElement.textContent = `${attackSpecial}`;
-            defElement.textContent = `${defense}`;
-            defSpecialElement.textContent = `${defenseSpecial}`;
-            speedElement.textContent = `${speed}`;
+            const imagePokemon = document.querySelector('.imagePokemon');
+            const imageID = document.querySelector('.imageID');
+            imagePokemon.src = image
+            imageID.textContent = `#${ident}`
 
-            // Define os valores máximos das barras de progresso
-            weightProgressBar.max = 100;
-            heightProgressBar.max = 100;
-            hpProgressBar.max = 100;
-            atkProgressBar.max = 100;
-            atkSpecialProgressBar.max = 100;
-            defProgressBar.max = 100;
-            defSpecialProgressBar.max = 100;
-            speedProgressBar.max = 100;
+            // constantes que estão armazenando os valores máximos de cada atributo e fazendo um processo de padronização para ocupar espaços entre 0 e 100.
 
-            // Atribui os valores normalizados às barras de progresso
-            weightProgressBar.value = normalizedWeight;
-            heightProgressBar.value = normalizedHeight;
-            hpProgressBar.value = normalizedHealth;
-            atkProgressBar.value = normalizedAttack;
-            atkSpecialProgressBar.value = normalizedAttackSpecial;
-            defProgressBar.value = normalizedDefense;
-            defSpecialProgressBar.value = normalizedDefenseSpecial;
-            speedProgressBar.value = normalizedSpeed;
+            const maxheight = 2999;
+            const maxweight = 145;
+            const maxhealth = 255;
+            const maxattack = 165;
+            const maxattackSpecial = 154;
+            const maxdefense = 230;
+            const maxdefenseSpecial = 255;
+            const maxspeed = 160;
 
-            // Adiciona os elementos criados ao elemento principal das informações do Pokemon
-            contentMain.appendChild(contentLeft);
-            contentMain.appendChild(contentRight);
-            contentLeft.appendChild(contentLeftTop);
-            contentLeft.appendChild(contentLeftBottom);
-            contentLeftBottom.appendChild(contentLeftBottomNames)
-            contentLeftBottom.appendChild(contentLeftBottomProgress)
-            contentLeftBottom.appendChild(contentLeftBottomResult)
+            const normalizedWeight = (weight / maxheight) * 100;
+            const normalizedHeight = (height / maxweight) * 100;
+            const normalizedHealth = (health / maxhealth) * 100;
+            const normalizedAttack = (attack / maxattack) * 100;
+            const normalizedAttackSpecial = (attackSpecial / maxattackSpecial) * 100;
+            const normalizedDefense = (defense / maxdefense) * 100;
+            const normalizedDefenseSpecial = (defenseSpecial / maxdefenseSpecial) * 100;
+            const normalizedSpeed = (speed / maxspeed) * 100;
 
-            contentLeftBottomResult.className = 'contentLeftBottomResults'
-            contentLeftBottomNames.className = 'contentLeftBottomNames'
-            contentLeftBottomProgress.className = 'contentLeftBottomProgress'
+            const progressWeight = document.querySelector('.progressWeight');
+            const progressHeight = document.querySelector('.progressHeight');
+            const progressHealth = document.querySelector('.progressHealth');
+            const progressAttack = document.querySelector('.progressAttack');
+            const progressSpecialAttack = document.querySelector('.progressSpecialAttack');
+            const progressDefense = document.querySelector('.progressDefense');
+            const progressSpecialDefense = document.querySelector('.progressSpecialDefense');
+            const progressSpeed = document.querySelector('.progressSpeed');
 
-            contentRight.appendChild(imageElement);
-            contentRight.appendChild(idElement);
-            contentLeftTop.appendChild(contentLeftTopTittle)
-            contentLeftTopTittle.appendChild(nameElement);
-            contentLeftTopTittle.appendChild(iconImageElement);
-            contentLeftTop.appendChild(typeElement);
-
-            contentLeftBottomNames.appendChild(weightLabelElement)
-            contentLeftBottomNames.appendChild(heightLabelElement)
-            contentLeftBottomNames.appendChild(hpLabelElement)
-            contentLeftBottomNames.appendChild(atkLabelElement)
-            contentLeftBottomNames.appendChild(atkSpecialLabelElement)
-            contentLeftBottomNames.appendChild(defLabelElement)
-            contentLeftBottomNames.appendChild(defSpecialLabelElement)
-            contentLeftBottomNames.appendChild(speedLabelElement)
-
-            contentLeftBottomProgress.appendChild(weightProgressBar);
-            contentLeftBottomProgress.appendChild(heightProgressBar);
-            contentLeftBottomProgress.appendChild(hpProgressBar);
-            contentLeftBottomProgress.appendChild(atkProgressBar);
-            contentLeftBottomProgress.appendChild(atkSpecialProgressBar);
-            contentLeftBottomProgress.appendChild(defProgressBar);
-            contentLeftBottomProgress.appendChild(defSpecialProgressBar);
-            contentLeftBottomProgress.appendChild(speedProgressBar);
-
-            contentLeftBottomResult.appendChild(weightElement)
-            contentLeftBottomResult.appendChild(heightElement)
-            contentLeftBottomResult.appendChild(hpElement)
-            contentLeftBottomResult.appendChild(atkElement)
-            contentLeftBottomResult.appendChild(atkSpecialElement)
-            contentLeftBottomResult.appendChild(defElement)
-            contentLeftBottomResult.appendChild(defSpecialElement)
-            contentLeftBottomResult.appendChild(speedElement)
-
-            sectionPokemonInfo.appendChild(contentMain);
+            progressWeight.style.width = `${normalizedWeight}%`;
+            progressHeight.style.width = `${normalizedHeight}%`;
+            progressHealth.style.width = `${normalizedHealth}%`;
+            progressAttack.style.width = `${normalizedAttack}%`;
+            progressSpecialAttack.style.width = `${normalizedAttackSpecial}%`;
+            progressDefense.style.width = `${normalizedDefense}%`;
+            progressSpecialDefense.style.width = `${normalizedDefenseSpecial}%`;
+            progressSpeed.style.width = `${normalizedSpeed}%`;
 
             const typeShadows = {
-                'electric': { 'color': '#EED535', 'filename': 'iconType/eletric.png' },
-                'bug': { 'color': '#729F3F', 'filename': 'iconType/bug.png' },
-                'dark': { 'color': '#707070', 'filename': 'iconType/dark.png' },
-                'dragon': { 'color': '#53A4CF', 'filename': 'iconType/dragon.png' },
-                'fairy': { 'color': '#FDB9E9', 'filename': 'iconType/fairy.png' },
-                'fighting': { 'color': '#D56723', 'filename': 'iconType/fighting.png' },
-                'fire': { 'color': '#FD7D24', 'filename': 'iconType/fire.png' },
-                'flying': { 'color': '#3DC7EF', 'filename': 'iconType/flying.png' },
-                'ghost': { 'color': '#7B62A3', 'filename': 'iconType/ghost.png' },
-                'grass': { 'color': '#9BCC50', 'filename': 'iconType/grass.png' },
-                'ground': { 'color': '#F7DE3F', 'filename': 'iconType/ground.png' },
-                'ice': { 'color': '#51C4E7', 'filename': 'iconType/ice.png' },
-                'normal': { 'color': '#A4ACAF', 'filename': 'iconType/normal.png' },
-                'poison': { 'color': '#B97FC9', 'filename': 'iconType/poison.png' },
-                'psychic': { 'color': '#F366B9', 'filename': 'iconType/psychic.png' },
-                'rock': { 'color': '#A38C21', 'filename': 'iconType/rock.png' },
-                'steel': { 'color': '#9EB7B8', 'filename': 'iconType/steel.png' },
-                'water': { 'color': '#4592C4', 'filename': 'water.png' }
-            }
+                'electric': { 'color': '#EED535', 'filename': 'iconType/electric.png', 'filtercolor': 'rgba(238, 213, 53, 0.25)' },
+                'bug': { 'color': '#729F3F', 'filename': 'iconType/bug.png', 'filtercolor': 'rgba(114, 159, 63, 0.25)' },
+                'dark': { 'color': '#707070', 'filename': 'iconType/dark.png', 'filtercolor': 'rgba(112, 112, 112, 0.25)' },
+                'dragon': { 'color': '#53A4CF', 'filename': 'iconType/dragon.png', 'filtercolor': 'rgba(83, 164, 207, 0.25)' },
+                'fairy': { 'color': '#FDB9E9', 'filename': 'iconType/fairy.png', 'filtercolor': 'rgba(253, 185, 233, 0.25)' },
+                'fighting': { 'color': '#D56723', 'filename': 'iconType/fighting.png', 'filtercolor': 'rgba(213, 103, 35, 0.25)' },
+                'fire': { 'color': '#FD7D24', 'filename': 'iconType/fire.png', 'filtercolor': 'rgba(253, 125, 36, 0.25)' },
+                'flying': { 'color': '#3DC7EF', 'filename': 'iconType/flying.png', 'filtercolor': 'rgba(61, 199, 239, 0.25)' },
+                'ghost': { 'color': '#7B62A3', 'filename': 'iconType/ghost.png', 'filtercolor': 'rgba(123, 98, 163, 0.25)' },
+                'grass': { 'color': '#9BCC50', 'filename': 'iconType/grass.png', 'filtercolor': 'rgba(155, 204, 80, 0.25)' },
+                'ground': { 'color': '#F7DE3F', 'filename': 'iconType/ground.png', 'filtercolor': 'rgba(247, 222, 63, 0.25)' },
+                'ice': { 'color': '#51C4E7', 'filename': 'iconType/ice.png', 'filtercolor': 'rgba(81, 196, 231, 0.25)' },
+                'normal': { 'color': '#A4ACAF', 'filename': 'iconType/normal.png', 'filtercolor': 'rgba(164, 172, 175, 0.25)' },
+                'poison': { 'color': '#B97FC9', 'filename': 'iconType/poison.png', 'filtercolor': 'rgba(185, 127, 201, 0.25)' },
+                'psychic': { 'color': '#F366B9', 'filename': 'iconType/psychic.png', 'filtercolor': 'rgba(243, 102, 185, 0.25)' },
+                'rock': { 'color': '#A38C21', 'filename': 'iconType/rock.png', 'filtercolor': 'rgba(163, 140, 33, 0.25)' },
+                'steel': { 'color': '#9EB7B8', 'filename': 'iconType/steel.png', 'filtercolor': 'rgba(158, 183, 184, 0.25)' },
+                'water': { 'color': '#4592C4', 'filename': 'iconType/water.png', 'filtercolor': 'rgba(69, 146, 196, 0.25)' }
+            };
 
 
             // Verifica se o tipo existe no objeto antes de aplicar a sombra
             if (typeShadows.hasOwnProperty(type)) {
-                imageElement.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type].color})`;
-                nameElement.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type].color})`;
-                nameElement.style.color = typeShadows[type].color;
-                idElement.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
-                iconImageElement.src = typeShadows[type].filename;
+                imagePokemon.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type].color})`;
+                imageID.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
+                pokemonNameH1.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type].color})`;
+                pokemonNameH1.style.color = typeShadows[type].color;
+                pokemonType.style.color = typeShadows[type].color;
+                pokemonType.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
+                imagePokemonType.src = typeShadows[type].filename;
 
-                const wordsColor = document.querySelectorAll('.ElementString');
-                wordsColor.forEach(wordsColor => {
-                    wordsColor.style.color = typeShadows[type].color;
-                });
+                const attcolor = document.querySelectorAll('.att-color')
+                attcolor.forEach(attcolor => {
+                    attcolor.style.color = typeShadows[type].color
+                    attcolor.style.filter = `drop-shadow(1px 1px 2px ${typeShadows[type].color})`;
+                })
 
-                const resultColor = document.querySelectorAll('.statisticElement')
-                resultColor.forEach(resultColor => {
-                    resultColor.style.color = typeShadows[type].color;
+                const progress = document.querySelectorAll('.progress')
+                progress.forEach(progress => {
+                    progress.style.backgroundColor = typeShadows[type].color
+                    progress.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
+                })
+
+                const progresscontainer = document.querySelectorAll('.progress-container')
+                progresscontainer.forEach(progresscontainer => {
+                    progresscontainer.style.backgroundColor = typeShadows[type].filtercolor
                 })
 
             }
-        })
-        .catch((err) => {
-            // Em caso de erro (Pokemon não encontrado ou erro na API), exibe uma mensagem de erro
-            const sectionPokemonInfo = document.getElementById('sectionPokemonInfo');
-            if (sectionPokemonInfo.firstChild) {
-                sectionPokemonInfo.removeChild(sectionPokemonInfo.firstChild);
-            }
 
-            const errorElement = document.createElement('p');
-            errorElement.textContent = "Pokemon não encontrado!";
-            sectionPokemonInfo.appendChild(errorElement);
-        });
+        })
+
+
+
+    /* .catch((err) => {
+        // Em caso de erro (Pokemon não encontrado ou erro na API), exibe uma mensagem de erro
+        const sectionPokemonInfo = document.getElementById('sectionPokemonInfo');
+        if (sectionPokemonInfo.firstChild) {
+            sectionPokemonInfo.removeChild(sectionPokemonInfo.firstChild);
+        }
+
+        const errorElement = document.createElement('p');
+        errorElement.textContent = "Pokemon não encontrado!";
+        sectionPokemonInfo.appendChild(errorElement);
+    }); */
 });

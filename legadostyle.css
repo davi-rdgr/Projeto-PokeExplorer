@@ -1,0 +1,292 @@
+@import url(https://db.onlinewebfonts.com/c/fd6fa80f1e3345834599de891cca3f4c?family=OCR+A+Extended);
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: OCR A Extended;
+}
+
+body {
+    color: #ffffff;
+    width: 100vw;
+    height: 100vh;
+    background-color: #18181B;
+   /*  background-image: url(462552.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative; */
+}
+
+/* body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(99, 99, 99, 0.5);
+} */
+
+.sectionPokemonInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 2.5rem;
+}
+
+.contentMain {
+    width: 84%;
+    height: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pokebola-icon {
+    height: 2.813rem;
+}
+
+.header-div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.625rem;
+}
+
+.contentLeft {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15%;
+}
+
+/* aqui ó */
+
+.contentLeftTittle {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.iconImageElement {
+    height: 3.75rem;
+}
+
+.contentLeftBottom {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2%;
+}
+
+
+.progressBar[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    width: 25rem;
+    height: 1.438rem;
+}
+
+.progressBar::-moz-progress-bar {
+    background-color: rgb(173, 173, 173);
+}
+
+
+
+.contentRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.imageElement {
+    height: 28.125rem;
+}
+
+.idElement {
+    font-size: 11.25rem;
+    color: rgb(173, 173, 173);
+}
+
+.nameElement {
+    font-size: 4.563rem;
+
+}
+
+.typeElement {
+    font-size: 1.375rem;
+    margin-top: 0.625rem;
+}
+
+.ElementString {
+    font-size: 1.625rem;
+    width: 18.125rem;
+}
+
+.statisticElement {
+    font-size: 1.625rem;
+    text-align: right;
+}
+
+.contentLeftBottomProgress {
+    display: flex;
+    flex-direction: column;
+    gap: 2.125rem;
+}
+
+.contentLeftBottomNames,
+.contentLeftBottomResults {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+}
+
+.headerPosition {
+    width: 85%;
+    margin: 1.1rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+form {
+    width: 15.625rem;
+    position: relative;
+}
+
+form input {
+    width: 100%;
+    color: #ffffff;
+    background-color: #18181B;
+    border: 1px solid #EF4036;
+    border-radius: 50px;
+    padding: 1rem 1rem;
+    font-size: 1.063rem;
+    height: 40px;
+}
+
+form button {
+    background-color: #18181B;
+    border: none;
+    border-radius: 50px;
+    height: 80%;
+    aspect-ratio: 1;
+    position: absolute;
+    right: 5px;
+    top: 10%;
+    cursor: pointer;
+}
+
+input:focus {
+    text-transform: none;
+    outline: none;
+}
+
+@media (min-width: 2260px) {
+
+    .contentMain {
+        width: 1897px;
+    }
+
+}
+
+@media (max-width: 1504px) {
+
+    html {
+        font-size: 14px
+    }
+
+    .contentLeftTop {
+        margin-bottom: 20px;
+    }
+
+
+}
+
+@media (max-width: 1318px) {
+
+    html {
+        font-size: 12px
+    }
+
+}
+
+@media (max-width: 1124px) {
+    .imageElement {
+        height: 250px;
+    }
+
+    .idElement {
+        font-size: 7rem;
+    }
+
+    .progressBar[value] {
+        width: 10rem;
+    }
+}
+
+@media (max-width: 630px) {
+    html {
+        font-size: 12px;
+    }
+
+    .headerPosition {
+        margin-top: 10px;
+    }
+
+    .sectionPokemonInfo {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .contentMain {
+        display: flex;
+        flex-direction: column-reverse;
+        height: auto;
+    }
+
+    .imageElement {
+        height: 20rem;
+        margin-top: 10px;
+    }
+
+    .typeElement {
+        margin-bottom: 15px;
+    }
+
+    .ElementString {
+        width: auto;
+        white-space: nowrap;
+    }
+
+    .progressBar[value] {
+        width: 8rem;
+    }
+
+    .idElement {
+        font-size: 5rem;
+    }
+
+    .contentLeftBottom {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 429px) {
+    html {
+        font-size: 10px;
+    }
+}
