@@ -2,22 +2,33 @@
 
 * {
     box-sizing: border-box;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     text-decoration: none;
     list-style: none;
     font-family: OCR A Extended;
 }
 
 body {
-    background-color: #18181B;
     color: #ffffff;
     width: 100vw;
+    height: 100vh;
+    background-color: #18181B;
+   /*  background-image: url(462552.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative; */
 }
 
-html {
+/* body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-}
+    background: rgba(99, 99, 99, 0.5);
+} */
 
 .sectionPokemonInfo {
     display: flex;
@@ -44,7 +55,7 @@ html {
     display: flex;
     align-items: center;
     flex-direction: row;
-    gap: 0.625rem; 
+    gap: 0.625rem;
 }
 
 .contentLeft {
@@ -52,7 +63,9 @@ html {
     flex-direction: column;
     width: 100%;
     gap: 15%;
-} /* aqui ó */
+}
+
+/* aqui ó */
 
 .contentLeftTittle {
     display: flex;
@@ -93,7 +106,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .imageElement {
@@ -144,7 +157,7 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+
 }
 
 form {
