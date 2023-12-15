@@ -143,7 +143,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
             progressSpeed.style.width = `${normalizedSpeed}%`;
 
             const typeShadows = {
-                'electric': { 'color': '#EED535', 'filename': 'iconType/electric.png', 'filtercolor': 'rgba(238, 213, 53, 0.25)' },
+                'electric': { 'color': '#EED535', 'filename': 'iconType/eletric.png', 'filtercolor': 'rgba(238, 213, 53, 0.25)' },
                 'bug': { 'color': '#729F3F', 'filename': 'iconType/bug.png', 'filtercolor': 'rgba(114, 159, 63, 0.25)' },
                 'dark': { 'color': '#707070', 'filename': 'iconType/dark.png', 'filtercolor': 'rgba(112, 112, 112, 0.25)' },
                 'dragon': { 'color': '#53A4CF', 'filename': 'iconType/dragon.png', 'filtercolor': 'rgba(83, 164, 207, 0.25)' },
