@@ -170,11 +170,23 @@ input:focus {
     font-size: 30px;
 }
 
-.content-attributes-general {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* GRID ORGANIZATION */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 33px;
+    
 }
+
+.att-text {
+    text-align: right;
+}
+
+
+/* ---------------------------- */
+
 
 .content-imageId {
     display: flex;
@@ -188,9 +200,6 @@ input:focus {
     color: #ffffff;
 }
 
-progress {
-    width: 22rem;
-}
 
 .att-color {
     white-space: nowrap;
@@ -202,6 +211,7 @@ progress {
     background-color: #A19E9E;
     position: relative;
     border-radius: 15px;
+    margin: 0 auto;
 }
 
 .progress {
