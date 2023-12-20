@@ -104,6 +104,14 @@ document.querySelector('form').addEventListener('submit', function (event) {
             imagePokemon.src = image
             imageID.textContent = `#${ident}`
 
+            // essa const recebe a div que introduz a tela, e faz um teste para identificar se há um tipo de pokemon escolhido. Caso sim, ela anula a tela, o que resulta na tela de apresentação de atributos padrão.
+
+            const introPoke = document.querySelector('.intro-screen')
+            if (type) {
+                introPoke.style.display = 'none'
+            }
+
+
             // constantes que estão armazenando os valores máximos de cada atributo e fazendo um processo de padronização para ocupar espaços entre 0 e 100.
 
             const maxheight = 2999;
