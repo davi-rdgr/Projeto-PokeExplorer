@@ -112,16 +112,45 @@ document.querySelector('form').addEventListener('submit', function (event) {
             }
 
 
-            // constantes que estão armazenando os valores máximos de cada atributo e fazendo um processo de padronização para ocupar espaços entre 0 e 100.
+            // let que estão armazenando os valores máximos de cada atributo e fazendo um processo de padronização para ocupar espaços entre 0 e 100.
 
-            const maxheight = 2999;
-            const maxweight = 145;
-            const maxhealth = 255;
-            const maxattack = 165;
-            const maxattackSpecial = 154;
-            const maxdefense = 230;
-            const maxdefenseSpecial = 255;
-            const maxspeed = 160;
+            let maxheight = 9999;
+            let maxweight = 145;
+            let maxhealth = 255;
+            let maxattack = 165;
+            let maxattackSpecial = 154;
+            let maxdefense = 230;
+            let maxdefenseSpecial = 255;
+            let maxspeed = 160;
+
+            // os pokemons caracterizados como gmax normalmente possuem atributos extremamente elevados em altura e peso, deixando o gráfico desbalanceado quando buscamos por um com tamanho e altura padrão. Esse teste identifica quando é solicitado um pokémon gmax e altera o limite do gráfico para melhor efeito visual dos dois casos.
+
+            if (name === 'charizard-gmax' ||
+                name === 'butterfree-gmax' ||
+                name === 'pikachu-gmax' ||
+                name === 'meowth-gmax' ||
+                name === 'machamp-gmax' ||
+                name === 'gengar-gmax' ||
+                name === 'kingler-gmax' ||
+                name === 'lapras-gmax' ||
+                name === 'eevee-gmax' ||
+                name === 'garbodor-gmax' ||
+                name === 'corviknight-gmax' ||
+                name === 'orbeetle-gmax' ||
+                name === 'drednaw-gmax' ||
+                name === 'coalossal-gmax' ||
+                name === 'flapple-gmax' ||
+                name === 'appletun-gmax' ||
+                name === 'sandaconda-gmax' ||
+                name === 'centiskorch-gmax' ||
+                name === 'hatterene-gmax' ||
+                name === 'grimmsnarl-gmax' ||
+                name === 'alcremie-gmax' ||
+                name === 'copperajah-gmax' ||
+                name === 'duraludon-gmax') {
+                maxheight = 10000;
+                maxweight = 750;
+            }
 
             const normalizedWeight = (weight / maxheight) * 100;
             const normalizedHeight = (height / maxweight) * 100;
