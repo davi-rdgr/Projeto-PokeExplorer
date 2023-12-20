@@ -113,9 +113,9 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
 
             // let que estão armazenando os valores máximos de cada atributo e fazendo um processo de padronização para ocupar espaços entre 0 e 100.
-
-            let maxheight = 9999;
-            let maxweight = 145;
+            // Pokémons padrão:
+            let maxweight = 905;
+            let maxheight = 100;
             let maxhealth = 255;
             let maxattack = 165;
             let maxattackSpecial = 154;
@@ -123,37 +123,24 @@ document.querySelector('form').addEventListener('submit', function (event) {
             let maxdefenseSpecial = 255;
             let maxspeed = 160;
 
-            // os pokemons caracterizados como gmax normalmente possuem atributos extremamente elevados em altura e peso, deixando o gráfico desbalanceado quando buscamos por um com tamanho e altura padrão. Esse teste identifica quando é solicitado um pokémon gmax e altera o limite do gráfico para melhor efeito visual dos dois casos.
+            // alguns pokémons tem atributos extremamente maiores que outros, o que faz as barras de progresso não aparecerem quando é um valor baixo, devido ao valor máximo ser muito alto. Nesse teste estou pré definindo os valores padrões no começo, e testando para ver se o pokémon possui atributos altos, para reatribuir um limite e a barra não exceder seu limite.
+            // Pokémons grandes:
+            console.log(weight)
+            if (weight >= 1500 && weight <= 4999) {
+                maxweight = 4999;
+                maxheight = 145;
 
-            if (name === 'charizard-gmax' ||
-                name === 'butterfree-gmax' ||
-                name === 'pikachu-gmax' ||
-                name === 'meowth-gmax' ||
-                name === 'machamp-gmax' ||
-                name === 'gengar-gmax' ||
-                name === 'kingler-gmax' ||
-                name === 'lapras-gmax' ||
-                name === 'eevee-gmax' ||
-                name === 'garbodor-gmax' ||
-                name === 'corviknight-gmax' ||
-                name === 'orbeetle-gmax' ||
-                name === 'drednaw-gmax' ||
-                name === 'coalossal-gmax' ||
-                name === 'flapple-gmax' ||
-                name === 'appletun-gmax' ||
-                name === 'sandaconda-gmax' ||
-                name === 'centiskorch-gmax' ||
-                name === 'hatterene-gmax' ||
-                name === 'grimmsnarl-gmax' ||
-                name === 'alcremie-gmax' ||
-                name === 'copperajah-gmax' ||
-                name === 'duraludon-gmax') {
-                maxheight = 10000;
-                maxweight = 750;
+            }
+            //Pokémons colossais:
+            else if (weight >= 5000 && weight <= 10000) {
+                maxweight = 10000;
+                maxheight = 750;
+
             }
 
-            const normalizedWeight = (weight / maxheight) * 100;
-            const normalizedHeight = (height / maxweight) * 100;
+
+            const normalizedWeight = (weight / maxweight) * 100;
+            const normalizedHeight = (height / maxheight) * 100;
             const normalizedHealth = (health / maxhealth) * 100;
             const normalizedAttack = (attack / maxattack) * 100;
             const normalizedAttackSpecial = (attackSpecial / maxattackSpecial) * 100;
