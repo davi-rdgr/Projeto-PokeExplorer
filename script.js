@@ -124,7 +124,8 @@ document.querySelector('form').addEventListener('submit', function (event) {
             let maxspeed = 160;
 
             // alguns pokémons tem atributos extremamente maiores que outros, o que faz as barras de progresso não aparecerem quando é um valor baixo, devido ao valor máximo ser muito alto. Nesse teste estou pré definindo os valores padrões no começo, e testando para ver se o pokémon possui atributos altos, para reatribuir um limite e a barra não exceder seu limite.
-            // Pokémons grandes:
+            // Pokémons grandes: 
+            
             console.log(weight)
             if (weight >= 1500 && weight <= 4999) {
                 maxweight = 4999;
