@@ -206,7 +206,8 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 pokemonNameH1.style.color = typeShadows[type].color;
                 pokemonType.style.color = typeShadows[type].color;
                 pokemonType.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
-                imagePokemonType.src = typeShadows[type].filename;
+                //imagePokemonType.src = typeShadows[type].filename;
+                imagePokemonType.setAttribute("src", typeShadows[type].filename)
 
                 const body = document.body;
                 body.style.backgroundImage = `url('${typeShadows[type].backgroundName}')`;
