@@ -13,7 +13,7 @@
 body {
 
     /* background-image: url(images/wallpaperflare.com_wallpaper\(2\).jpg); */
-    background-image: url(imagesBackground/water.png);
+    background-image: url(pokeFloyd.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -54,14 +54,17 @@ form {
 form input {
     width: 100%;
     /* color: rgba(239, 64, 54); */
-    color: #a8d8f8;
+    color: #ffffff;
     background-color: #18181B;
     /* border: 1px solid rgba(239, 64, 54, 0.7); */
-    border: 1px solid #a8d8f8;
+    border: none;
     border-radius: 50px;
     padding: 1rem 1rem;
     font-size: 1.063rem;
     height: 40px;
+}
+.optColors {
+    stroke: white;
 }
 
 form button {
@@ -108,17 +111,18 @@ input:focus {
     transition: all .2s ease;
 }
 
-.svgaa:hover .svgconfuso {
+/* .svgaa:hover .svgconfuso {
     fill: rgba(239, 64, 54);
-}
+} */
 
 .pokedex {
     font-family: 'Pocket Monk', sans-serif;
     /* color: rgba(239, 64, 54); */
-    color: #a8d8f8;
+    color: white;
     font-size: 30px;
     text-shadow: 1px 1px 2px black;
     white-space: nowrap;
+    color: #c7c5c5;
 }
 
 .content-titleType {

@@ -125,7 +125,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
             // alguns pokémons tem atributos extremamente maiores que outros, o que faz as barras de progresso não aparecerem quando é um valor baixo, devido ao valor máximo ser muito alto. Nesse teste estou pré definindo os valores padrões no começo, e testando para ver se o pokémon possui atributos altos, para reatribuir um limite e a barra não exceder seu limite.
             // Pokémons grandes: 
-            
+
             console.log(weight)
             if (weight >= 1500 && weight <= 4999) {
                 maxweight = 4999;
@@ -168,25 +168,26 @@ document.querySelector('form').addEventListener('submit', function (event) {
             progressSpeed.style.width = `${normalizedSpeed}%`;
 
             const typeShadows = {
-                'electric': { 'color': '#EED535', 'filename': 'iconType/eletric.png', 'filtercolor': 'rgba(238, 213, 53, 0.25)' },
-                'bug': { 'color': '#729F3F', 'filename': 'iconType/bug.png', 'filtercolor': 'rgba(114, 159, 63, 0.25)' },
-                'dark': { 'color': '#707070', 'filename': 'iconType/dark.png', 'filtercolor': 'rgba(112, 112, 112, 0.25)' },
-                'dragon': { 'color': '#53A4CF', 'filename': 'iconType/dragon.png', 'filtercolor': 'rgba(83, 164, 207, 0.25)' },
-                'fairy': { 'color': '#FDB9E9', 'filename': 'iconType/fairy.png', 'filtercolor': 'rgba(253, 185, 233, 0.25)' },
-                'fighting': { 'color': '#D56723', 'filename': 'iconType/fighting.png', 'filtercolor': 'rgba(213, 103, 35, 0.25)' },
-                'fire': { 'color': '#FD7D24', 'filename': 'iconType/fire.png', 'filtercolor': 'rgba(253, 125, 36, 0.25)' },
-                'flying': { 'color': '#3DC7EF', 'filename': 'iconType/flying.png', 'filtercolor': 'rgba(61, 199, 239, 0.25)' },
-                'ghost': { 'color': '#7B62A3', 'filename': 'iconType/ghost.png', 'filtercolor': 'rgba(123, 98, 163, 0.25)' },
-                'grass': { 'color': '#9BCC50', 'filename': 'iconType/grass.png', 'filtercolor': 'rgba(155, 204, 80, 0.25)' },
-                'ground': { 'color': '#F7DE3F', 'filename': 'iconType/ground.png', 'filtercolor': 'rgba(247, 222, 63, 0.25)' },
-                'ice': { 'color': '#51C4E7', 'filename': 'iconType/ice.png', 'filtercolor': 'rgba(81, 196, 231, 0.25)' },
-                'normal': { 'color': '#A4ACAF', 'filename': 'iconType/normal.png', 'filtercolor': 'rgba(164, 172, 175, 0.25)' },
-                'poison': { 'color': '#B97FC9', 'filename': 'iconType/poison.png', 'filtercolor': 'rgba(185, 127, 201, 0.25)' },
-                'psychic': { 'color': '#F366B9', 'filename': 'iconType/psychic.png', 'filtercolor': 'rgba(243, 102, 185, 0.25)' },
-                'rock': { 'color': '#A38C21', 'filename': 'iconType/rock.png', 'filtercolor': 'rgba(163, 140, 33, 0.25)' },
-                'steel': { 'color': '#9EB7B8', 'filename': 'iconType/steel.png', 'filtercolor': 'rgba(158, 183, 184, 0.25)' },
-                'water': { 'color': '#4592C4', 'filename': 'iconType/water.png', 'filtercolor': 'rgba(69, 146, 196, 0.25)' }
+                'electric': { 'color': '#EED535', 'filename': 'iconType/electric.png', 'filtercolor': 'rgba(238, 213, 53, 0.25)', 'backgroundName': 'imagesBackground/electric.jpg' },
+                'bug': { 'color': '#729F3F', 'filename': 'iconType/bug.png', 'filtercolor': 'rgba(114, 159, 63, 0.25)', 'backgroundName': 'imagesBackground/bug.jpg' },
+                'dark': { 'color': '#c7c5c5', 'filename': 'iconType/dark.png', 'filtercolor': 'rgba(112, 112, 112, 0.25)', 'backgroundName': 'imagesBackground/dark.jpg' },
+                'dragon': { 'color': '#53A4CF', 'filename': 'iconType/dragon.png', 'filtercolor': 'rgba(83, 164, 207, 0.25)', 'backgroundName': 'imagesBackground/dragon.jpg' },
+                'fairy': { 'color': '#FDB9E9', 'filename': 'iconType/fairy.png', 'filtercolor': 'rgba(253, 185, 233, 0.25)', 'backgroundName': 'imagesBackground/fairy.jpg' },
+                'fighting': { 'color': '#D56723', 'filename': 'iconType/fighting.png', 'filtercolor': 'rgba(213, 103, 35, 0.25)', 'backgroundName': 'imagesBackground/fighting.jpg' },
+                'fire': { 'color': '#FD7D24', 'filename': 'iconType/fire.png', 'filtercolor': 'rgba(253, 125, 36, 0.25)', 'backgroundName': 'imagesBackground/fire.jpg' },
+                'flying': { 'color': '#3DC7EF', 'filename': 'iconType/flying.png', 'filtercolor': 'rgba(61, 199, 239, 0.25)', 'backgroundName': 'imagesBackground/flying.jpg' },
+                'ghost': { 'color': '#b088f0', 'filename': 'iconType/ghost.png', 'filtercolor': 'rgba(123, 98, 163, 0.25)', 'backgroundName': 'imagesBackground/ghost.jpg' },
+                'grass': { 'color': '#9BCC50', 'filename': 'iconType/grass.png', 'filtercolor': 'rgba(155, 204, 80, 0.25)', 'backgroundName': 'imagesBackground/grass.jpg' },
+                'ground': { 'color': '#F7DE3F', 'filename': 'iconType/ground.png', 'filtercolor': 'rgba(247, 222, 63, 0.25)', 'backgroundName': 'imagesBackground/ground.jpg' },
+                'ice': { 'color': '#51C4E7', 'filename': 'iconType/ice.png', 'filtercolor': 'rgba(81, 196, 231, 0.25)', 'backgroundName': 'imagesBackground/ice.jpg' },
+                'normal': { 'color': '#A4ACAF', 'filename': 'iconType/normal.png', 'filtercolor': 'rgba(164, 172, 175, 0.25)', 'backgroundName': 'imagesBackground/normal.jpg' },
+                'poison': { 'color': '#B97FC9', 'filename': 'iconType/poison.png', 'filtercolor': 'rgba(185, 127, 201, 0.25)', 'backgroundName': 'imagesBackground/poison.jpg' },
+                'psychic': { 'color': '#F366B9', 'filename': 'iconType/psychic.png', 'filtercolor': 'rgba(243, 102, 185, 0.25)', 'backgroundName': 'imagesBackground/psychic.jpg' },
+                'rock': { 'color': '#A38C21', 'filename': 'iconType/rock.png', 'filtercolor': 'rgba(163, 140, 33, 0.25)', 'backgroundName': 'imagesBackground/rock.jpg' },
+                'steel': { 'color': '#9EB7B8', 'filename': 'iconType/steel.png', 'filtercolor': 'rgba(158, 183, 184, 0.25)', 'backgroundName': 'imagesBackground/steel.jpg' },
+                'water': { 'color': '#a8d8f8', 'filename': 'iconType/water.png', 'filtercolor': 'rgba(69, 146, 196, 0.25)', 'backgroundName': 'imagesBackground/water.jpg' }
             };
+
 
 
             // Verifica se o tipo existe no objeto antes de aplicar a sombra
@@ -198,6 +199,25 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 pokemonType.style.color = typeShadows[type].color;
                 pokemonType.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
                 imagePokemonType.src = typeShadows[type].filename;
+
+                const body = document.body;
+                body.style.backgroundImage = `url('${typeShadows[type].backgroundName}')`;
+
+
+                const optColors = document.querySelectorAll('.optColors');
+                /* optColors.style.stroke = 'black' */
+
+                optColors.forEach(optColors => {
+                    optColors.style.stroke = typeShadows[type].color;
+                    optColors.style.color = typeShadows[type].color;
+                });
+
+
+
+
+
+
+
 
                 const attcolor = document.querySelectorAll('.att-color')
                 attcolor.forEach(attcolor => {
