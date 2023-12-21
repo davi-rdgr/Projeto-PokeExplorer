@@ -1,15 +1,11 @@
-// Função para capitalizar a primeira letra de uma string
-function capitalizarPrimeiraLetra(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
 const content = document.querySelector('.content-main')
 content.style.display = 'none'
 
-
 // Adiciona um ouvinte de eventos para o evento de envio do formulário
+// Evita o envio padrão do formulário que recarregaria a página
+
 document.querySelector('form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Evita o envio padrão do formulário que recarregaria a página
+    event.preventDefault(); 
 
     // Obtém o valor digitado pelo usuário e converte para letras minúsculas
     const pokemonName = document.getElementById('pokemonName').value.toLowerCase();
@@ -19,14 +15,13 @@ document.querySelector('form').addEventListener('submit', function (event) {
     fetch(apiUrl)
         .then((res) => res.json()) // Converte a resposta em formato JSON
         .then(data => {
-            // Obtém o elemento onde as informações do Pokemon serão exibidas
-            /* const sectionPokemonInfo = document.getElementById('sectionPokemonInfo');
 
-            // Remove o conteúdo anterior se houver
-            if (sectionPokemonInfo.firstChild) {
-                sectionPokemonInfo.removeChild(sectionPokemonInfo.firstChild);
-            } */
             content.style.display = 'flex'
+
+            // Função para capitalizar a primeira letra de uma string
+            function capitalizarPrimeiraLetra(str) {
+                return str.charAt(0).toUpperCase() + str.slice(1);
+            }
 
             // recebendo o valor da API e armazenando
             const name = data.name;
@@ -111,10 +106,9 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 introPoke.style.display = 'none'
             }
 
-
             // let que estão armazenando os valores máximos de cada atributo e fazendo um processo de padronização para ocupar espaços entre 0 e 100.
             // Pokémons padrão:
-            let maxweight = 905;
+            let maxweight = 1220;
             let maxheight = 100;
             let maxhealth = 255;
             let maxattack = 165;
@@ -139,7 +133,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
             }
 
-
             const normalizedWeight = (weight / maxweight) * 100;
             const normalizedHeight = (height / maxheight) * 100;
             const normalizedHealth = (health / maxhealth) * 100;
@@ -158,14 +151,31 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const progressSpecialDefense = document.querySelector('.progressSpecialDefense');
             const progressSpeed = document.querySelector('.progressSpeed');
 
-            progressWeight.style.width = `${normalizedWeight}%`;
-            progressHeight.style.width = `${normalizedHeight}%`;
-            progressHealth.style.width = `${normalizedHealth}%`;
-            progressAttack.style.width = `${normalizedAttack}%`;
-            progressSpecialAttack.style.width = `${normalizedAttackSpecial}%`;
-            progressDefense.style.width = `${normalizedDefense}%`;
-            progressSpecialDefense.style.width = `${normalizedDefenseSpecial}%`;
-            progressSpeed.style.width = `${normalizedSpeed}%`;
+            // estou definindo um timing para criar uma transition que farão as barras saírem de width: 0 para seu posto normal de forma animada.
+
+            let timing = 500;
+
+            progressWeight.style.transition = 'width ' + timing / 1000 + "s ease-out";
+            progressHeight.style.transition = 'width ' + timing / 1000 + "s ease-out";
+            progressHealth.style.transition = 'width ' + timing / 1000 + "s ease-out";
+            progressAttack.style.transition = 'width ' + timing / 1000 + "s ease-out";
+            progressSpecialAttack.style.transition = 'width ' + timing / 1000 + "s ease-out";
+            progressDefense.style.transition = 'width ' + timing / 1000 + "s ease-out";
+            progressSpecialDefense.style.transition = 'width ' + timing / 1000 + "s ease-out";
+            progressSpeed.style.transition = 'width ' + timing / 1000 + "s ease-out";
+
+            // estou usando a função setTimeout para dar um delay de 0.2 segundos no inicio da animação.
+
+            setTimeout(function () {
+                progressWeight.style.width = `${normalizedWeight}%`;
+                progressHeight.style.width = `${normalizedHeight}%`;
+                progressHealth.style.width = `${normalizedHealth}%`;
+                progressAttack.style.width = `${normalizedAttack}%`;
+                progressSpecialAttack.style.width = `${normalizedAttackSpecial}%`;
+                progressDefense.style.width = `${normalizedDefense}%`;
+                progressSpecialDefense.style.width = `${normalizedDefenseSpecial}%`;
+                progressSpeed.style.width = `${normalizedSpeed}%`;
+            }, 200)
 
             const typeShadows = {
                 'electric': { 'color': '#EED535', 'filename': 'iconType/electric.png', 'filtercolor': 'rgba(238, 213, 53, 0.25)', 'backgroundName': 'imagesBackground/electric.jpg' },
@@ -183,12 +193,10 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 'normal': { 'color': '#A4ACAF', 'filename': 'iconType/normal.png', 'filtercolor': 'rgba(164, 172, 175, 0.25)', 'backgroundName': 'imagesBackground/normal.jpg' },
                 'poison': { 'color': '#B97FC9', 'filename': 'iconType/poison.png', 'filtercolor': 'rgba(185, 127, 201, 0.25)', 'backgroundName': 'imagesBackground/poison.jpg' },
                 'psychic': { 'color': '#F366B9', 'filename': 'iconType/psychic.png', 'filtercolor': 'rgba(243, 102, 185, 0.25)', 'backgroundName': 'imagesBackground/psychic.jpg' },
-                'rock': { 'color': '#A38C21', 'filename': 'iconType/rock.png', 'filtercolor': 'rgba(163, 140, 33, 0.25)', 'backgroundName': 'imagesBackground/rock.jpg' },
+                'rock': { 'color': '#d3b42a', 'filename': 'iconType/rock.png', 'filtercolor': 'rgba(163, 140, 33, 0.25)', 'backgroundName': 'imagesBackground/rock.jpg' },
                 'steel': { 'color': '#9EB7B8', 'filename': 'iconType/steel.png', 'filtercolor': 'rgba(158, 183, 184, 0.25)', 'backgroundName': 'imagesBackground/steel.jpg' },
                 'water': { 'color': '#a8d8f8', 'filename': 'iconType/water.png', 'filtercolor': 'rgba(69, 146, 196, 0.25)', 'backgroundName': 'imagesBackground/water.jpg' }
             };
-
-
 
             // Verifica se o tipo existe no objeto antes de aplicar a sombra
             if (typeShadows.hasOwnProperty(type)) {
@@ -203,21 +211,11 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 const body = document.body;
                 body.style.backgroundImage = `url('${typeShadows[type].backgroundName}')`;
 
-
                 const optColors = document.querySelectorAll('.optColors');
-                /* optColors.style.stroke = 'black' */
-
                 optColors.forEach(optColors => {
                     optColors.style.stroke = typeShadows[type].color;
                     optColors.style.color = typeShadows[type].color;
                 });
-
-
-
-
-
-
-
 
                 const attcolor = document.querySelectorAll('.att-color')
                 attcolor.forEach(attcolor => {
@@ -229,6 +227,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 progress.forEach(progress => {
                     progress.style.backgroundColor = typeShadows[type].color
                     progress.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
+                    progress.style.width = '0'
                 })
 
                 const progresscontainer = document.querySelectorAll('.progress-container')
@@ -239,8 +238,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
             }
 
         })
-
-
 
     /* .catch((err) => {
         // Em caso de erro (Pokemon não encontrado ou erro na API), exibe uma mensagem de erro
