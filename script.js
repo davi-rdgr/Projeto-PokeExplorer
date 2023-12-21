@@ -5,7 +5,7 @@ content.style.display = 'none'
 // Evita o envio padrão do formulário que recarregaria a página
 
 document.querySelector('form').addEventListener('submit', function (event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     // Obtém o valor digitado pelo usuário e converte para letras minúsculas
     const pokemonName = document.getElementById('pokemonName').value.toLowerCase();
@@ -206,8 +206,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 pokemonNameH1.style.color = typeShadows[type].color;
                 pokemonType.style.color = typeShadows[type].color;
                 pokemonType.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
-                //imagePokemonType.src = typeShadows[type].filename;
-                imagePokemonType.setAttribute("src", typeShadows[type].filename)
+                imagePokemonType.src = typeShadows[type].filename;
 
                 const body = document.body;
                 body.style.backgroundImage = `url('${typeShadows[type].backgroundName}')`;
