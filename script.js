@@ -1,6 +1,6 @@
 const content = document.querySelector('.content-main')
+/* let progressAnimationExecuted = false; */
 content.style.display = 'none'
-
 // Adiciona um ouvinte de eventos para o evento de envio do formulário
 // Evita o envio padrão do formulário que recarregaria a página
 
@@ -108,7 +108,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
             // let que estão armazenando os valores máximos de cada atributo e fazendo um processo de padronização para ocupar espaços entre 0 e 100.
             // Pokémons padrão:
-            let maxweight = 1220;
+            let maxweight = 1420;
             let maxheight = 100;
             let maxhealth = 255;
             let maxattack = 165;
@@ -215,6 +215,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 optColors.forEach(optColors => {
                     optColors.style.stroke = typeShadows[type].color;
                     optColors.style.color = typeShadows[type].color;
+
                 });
 
                 const attcolor = document.querySelectorAll('.att-color')
@@ -228,6 +229,11 @@ document.querySelector('form').addEventListener('submit', function (event) {
                     progress.style.backgroundColor = typeShadows[type].color
                     progress.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
                     progress.style.width = '0'
+                    /* if (!progressAnimationExecuted) {
+                        progress.style.width = '0'
+                        progressAnimationExecuted = true
+                    } */
+
                 })
 
                 const progresscontainer = document.querySelectorAll('.progress-container')
