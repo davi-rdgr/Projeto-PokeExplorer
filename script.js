@@ -53,11 +53,65 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
             pokemonNameH1.innerHTML = nomeCapitalizado;
             if (typetwo) {
-                pokemonType.innerHTML = `${typeCapitalizado} - ${typetwoCapitalizado}`;
+                pokemonType.innerHTML = `${typeCapitalizado} ${typetwoCapitalizado}`;
             } else {
                 pokemonType.innerHTML = typeCapitalizado;
             }
 
+            if (
+                name === "articuno" ||
+                name === "zapdos" ||
+                name === "moltres" ||
+                name === "mewtwo" ||
+                name === "mew" ||
+                name === "raikou" ||
+                name === "entei" ||
+                name === "suicune" ||
+                name === "lugia" ||
+                name === "ho-oh" ||
+                name === "celebi" ||
+                name === "regirock" ||
+                name === "regice" ||
+                name === "registeel" ||
+                name === "latias" ||
+                name === "latios" ||
+                name === "kyogre" ||
+                name === "groudon" ||
+                name === "rayquaza" ||
+                name === "jirachi" ||
+                name === "deoxys" ||
+                name === "uxie" ||
+                name === "mesprit" ||
+                name === "azelf" ||
+                name === "dialga" ||
+                name === "palkia" ||
+                name === "heatran" ||
+                name === "regigigas" ||
+                name === "giratina" ||
+                name === "cresselia" ||
+                name === "phione" ||
+                name === "manaphy" ||
+                name === "darkrai" ||
+                name === "shaymin" ||
+                name === "arceus" ||
+                name === "victini" ||
+                name === "cobalion" ||
+                name === "terrakion" ||
+                name === "virizion" ||
+                name === "tornadus" ||
+                name === "thundurus" ||
+                name === "reshiram" ||
+                name === "zekrom" ||
+                name === "landorus" ||
+                name === "kyurem" ||
+                name === "keldeo" ||
+                name === "meloetta" ||
+                name === "genesect"
+            ) {
+                console.log(name + " é um Pokémon lendário!");
+            } else {
+                console.log(name + " não é um Pokémon lendário.");
+            }
 
 
             // armazenando o container que receberá os nomes dos atributos.
