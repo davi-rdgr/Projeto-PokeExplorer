@@ -28,7 +28,12 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const nomeCapitalizado = capitalizarPrimeiraLetra(name);
             const ident = data.id;
             const type = data.types['0'].type.name;
-            const typeCapitalizado = capitalizarPrimeiraLetra(type)
+            const typetwo = data.types['1'] ? data.types['1'].type.name : null;
+            const typeCapitalizado = capitalizarPrimeiraLetra(type);
+            let typetwoCapitalizado = null;
+            if (typetwo) {
+                typetwoCapitalizado = capitalizarPrimeiraLetra(typetwo);
+            }
             const image = data.sprites.other['official-artwork'].front_default;
             const weight = data.weight;
             const height = data.height;
@@ -39,15 +44,21 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const attackSpecial = data.stats.find(stat => stat.stat.name === 'special-attack').base_stat;
             const defenseSpecial = data.stats.find(stat => stat.stat.name === 'special-defense').base_stat;
 
-            // armazenando o container que receberá o nome, ícone do tipo e tipo.
-            // enviando os atributos vindos da API para o container no HTML.
+            // Armazenando o container que receberá o nome, ícone do tipo e tipo.
+            // Enviando os atributos vindos da API para o container no HTML.
 
             const pokemonNameH1 = document.querySelector('.pokemon-name');
             const imagePokemonType = document.querySelector('.imagePokemonType');
             const pokemonType = document.querySelector('.pokemonType');
 
             pokemonNameH1.innerHTML = nomeCapitalizado;
-            pokemonType.innerHTML = typeCapitalizado;
+            if (typetwo) {
+                pokemonType.innerHTML = `${typeCapitalizado} - ${typetwoCapitalizado}`;
+            } else {
+                pokemonType.innerHTML = typeCapitalizado;
+            }
+
+
 
             // armazenando o container que receberá os nomes dos atributos.
             // enviando para o html o nome dos atributos quando a consulta for realizada.
@@ -120,7 +131,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
             // alguns pokémons tem atributos extremamente maiores que outros, o que faz as barras de progresso não aparecerem quando é um valor baixo, devido ao valor máximo ser muito alto. Nesse teste estou pré definindo os valores padrões no começo, e testando para ver se o pokémon possui atributos altos, para reatribuir um limite e a barra não exceder seu limite.
             // Pokémons grandes: 
 
-            console.log(weight)
             if (weight >= 1500 && weight <= 4999) {
                 maxweight = 4999;
                 maxheight = 145;
@@ -256,4 +266,5 @@ document.querySelector('form').addEventListener('submit', function (event) {
         errorElement.textContent = "Pokemon não encontrado!";
         sectionPokemonInfo.appendChild(errorElement);
     }); */
+
 });
