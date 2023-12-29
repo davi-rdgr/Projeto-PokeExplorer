@@ -132,7 +132,7 @@ input:focus {
     margin-bottom: 10px;
 }
 
-.pokemonType {
+.pokemonType, .pokemonTypetwo {
     font-size: 25px;
 }
 
