@@ -12,7 +12,7 @@
 
 body {
 
-    background-image: url(/images/wallpaperflare.com_wallpaper\(5\).jpg);
+    background-image: url(images/wallpaperflare.com_wallpaper\(5\).jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -132,7 +132,7 @@ input:focus {
     margin-bottom: 10px;
 }
 
-.pokemonType, .pokemonTypetwo {
+.pokemonType, .pokemonTypetwo, .abilities {
     font-size: 25px;
 }
 
