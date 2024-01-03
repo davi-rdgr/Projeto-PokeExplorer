@@ -32,12 +32,24 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const nameCapitalizado = capitalizarPrimeiraLetra(name);
             const ident = data.id;
             const types = data.types;
-
             let pokemonTypes = [];
             types.forEach((typeData) => {
                 const typeName = capitalizarPrimeiraLetra(typeData.type.name);
                 pokemonTypes.push(typeName);
             });
+
+            const abilities = data.abilities;
+            let pokemonAbilities = []
+
+            abilities.forEach(abilities => {
+                const abilitiesFor = capitalizarPrimeiraLetra(abilities.ability.name)
+                pokemonAbilities.push(abilitiesFor);
+            });
+            console.log(pokemonAbilities)
+            
+            const abilitiesSpan = document.querySelector('.abilities')
+            abilitiesSpan.textContent = pokemonAbilities
+            
 
             const image = data.sprites.other['official-artwork'].front_default;
             const weight = data.weight;
@@ -286,7 +298,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
                     pokemonTypetwo.style.color = typeShadows[pokemonTypes[1]].color;
                     pokemonTypetwo.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[1]].color})`;
                 }
-
+                
 
                 imagePokemonType.src = typeShadows[pokemonTypes[0]].filename;
 
