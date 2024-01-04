@@ -19,10 +19,12 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
 .classtest {
     display: flex;
     flex-direction: row;
 }
+
 .headerShadowDiv {
     background-color: rgba(24, 24, 27, 0.9);
     width: 100vw;
@@ -132,7 +134,19 @@ input:focus {
     margin-bottom: 10px;
 }
 
-.pokemonType, .pokemonTypetwo, .abilities {
+.pokemon-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.abilitiesContent {
+    text-align: left;
+}
+
+.pokemonType,
+.pokemonTypetwo,
+.pokeAbi {
     font-size: 25px;
 }
 
@@ -146,7 +160,7 @@ input:focus {
 }
 
 .imagePokemon {
-    height: 450px;
+    height: 400px;
 }
 
 .sectionPokemonInfo {
@@ -185,9 +199,9 @@ input:focus {
     justify-content: space-between;
     width: 100%;
     align-items: center;
-
 }
 
+/* AQUI  */
 
 .content-attributes {
     width: 70%;
@@ -195,7 +209,7 @@ input:focus {
     flex-direction: column;
     justify-content: space-between;
     gap: 30px;
-    font-size: 30px;
+    font-size: 28px;
 
 }
 
@@ -226,7 +240,7 @@ input:focus {
 }
 
 .imageID {
-    font-size: 150px;
+    font-size: 80px;
     color: #ffffff;
 }
 
