@@ -134,6 +134,15 @@ input:focus {
     margin-bottom: 10px;
 }
 
+.imagePokemonType {
+    width: 60px;
+}
+
+.pokebola-icon {
+    height: 60px;
+    object-fit: contain;
+}
+
 .pokemon-infos {
     display: flex;
     flex-direction: column;
@@ -154,10 +163,6 @@ input:focus {
     font-size: 80px;
 }
 
-.pokebola-icon {
-    height: 70px;
-    object-fit: contain;
-}
 
 .imagePokemon {
     height: 400px;

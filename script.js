@@ -304,8 +304,12 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 }
 
 
-                imagePokemonType.src = typeShadows[pokemonTypes[0]].filename;
+                // imagePokemonType.src = typeShadows[pokemonTypes[0]].filename;
+                imagePokemonType.style.backgroundImage = `url('${typeShadows[pokemonTypes[0]].filename}')`;
+                imagePokemonType.style.backgroundRepeat = 'no-repeat';
+                imagePokemonType.style.backgroundSize = '60px';
 
+                
                 const body = document.body;
                 body.style.backgroundImage = `url('${typeShadows[pokemonTypes[0]].backgroundName}')`;
 
