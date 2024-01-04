@@ -45,11 +45,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 const abilitiesFor = capitalizarPrimeiraLetra(abilities.ability.name)
                 pokemonAbilities.push(abilitiesFor);
             });
-            console.log(pokemonAbilities)
-            
-            const abilitiesSpan = document.querySelector('.abilities')
-            abilitiesSpan.textContent = pokemonAbilities
-            
 
             const image = data.sprites.other['official-artwork'].front_default;
             const weight = data.weight;
@@ -80,6 +75,11 @@ document.querySelector('form').addEventListener('submit', function (event) {
                     pokemonTypetwo.innerHTML = pokemonTypes[1];
                 }
             }
+
+            const abilitiesSpan = document.querySelector('.pokeAbilities')
+            const abilitiesSpanTwo = document.querySelector('.pokeAbilitiesTwo')
+            abilitiesSpan.textContent = pokemonAbilities[0]
+            abilitiesSpanTwo.textContent = pokemonAbilities[1]
 
             if (
                 name === "articuno" ||
@@ -292,13 +292,17 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 pokemonNameH1.style.color = typeShadows[pokemonTypes[0]].color;
                 pokemonType.style.color = typeShadows[pokemonTypes[0]].color;
                 pokemonType.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[0]].color})`;
+                abilitiesSpan.style.color = typeShadows[pokemonTypes[0]].color;
+                abilitiesSpanTwo.style.color = typeShadows[pokemonTypes[0]].color;
+                abilitiesSpan.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[0]].color})`;
+                abilitiesSpanTwo.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[0]].color})`;
 
                 if (pokemonTypes[1]) {
                     pokemonTypetwo.innerHTML = pokemonTypes[1];
                     pokemonTypetwo.style.color = typeShadows[pokemonTypes[1]].color;
                     pokemonTypetwo.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[1]].color})`;
                 }
-                
+
 
                 imagePokemonType.src = typeShadows[pokemonTypes[0]].filename;
 
