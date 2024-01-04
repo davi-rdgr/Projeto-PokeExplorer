@@ -264,24 +264,24 @@ document.querySelector('form').addEventListener('submit', function (event) {
             }, 200)
 
             const typeShadows = {
-                'Electric': { 'color': '#EED535', 'filename': 'iconType/electric.png', 'filtercolor': 'rgba(238, 213, 53, 0.25)', 'backgroundName': 'imagesBackground/electric.jpg' },
-                'Bug': { 'color': '#729F3F', 'filename': 'iconType/bug.png', 'filtercolor': 'rgba(114, 159, 63, 0.25)', 'backgroundName': 'imagesBackground/bug.jpg' },
-                'Dark': { 'color': '#c7c5c5', 'filename': 'iconType/dark.png', 'filtercolor': 'rgba(112, 112, 112, 0.25)', 'backgroundName': 'imagesBackground/dark.jpg' },
-                'Dragon': { 'color': '#53A4CF', 'filename': 'iconType/dragon.png', 'filtercolor': 'rgba(83, 164, 207, 0.25)', 'backgroundName': 'imagesBackground/dragon.jpg' },
-                'Fairy': { 'color': '#FDB9E9', 'filename': 'iconType/fairy.png', 'filtercolor': 'rgba(253, 185, 233, 0.25)', 'backgroundName': 'imagesBackground/fairy.jpg' },
-                'Fighting': { 'color': '#D56723', 'filename': 'iconType/fighting.png', 'filtercolor': 'rgba(213, 103, 35, 0.25)', 'backgroundName': 'imagesBackground/fighting.jpg' },
-                'Fire': { 'color': '#FD7D24', 'filename': 'iconType/fire.png', 'filtercolor': 'rgba(253, 125, 36, 0.25)', 'backgroundName': 'imagesBackground/fire.jpg' },
-                'Flying': { 'color': '#3DC7EF', 'filename': 'iconType/flying.png', 'filtercolor': 'rgba(61, 199, 239, 0.25)', 'backgroundName': 'imagesBackground/flying.jpg' },
-                'Ghost': { 'color': '#b088f0', 'filename': 'iconType/ghost.png', 'filtercolor': 'rgba(123, 98, 163, 0.25)', 'backgroundName': 'imagesBackground/ghost.jpg' },
-                'Grass': { 'color': '#9BCC50', 'filename': 'iconType/grass.png', 'filtercolor': 'rgba(155, 204, 80, 0.25)', 'backgroundName': 'imagesBackground/grass.jpg' },
-                'Ground': { 'color': '#F7DE3F', 'filename': 'iconType/ground.png', 'filtercolor': 'rgba(247, 222, 63, 0.25)', 'backgroundName': 'imagesBackground/ground.jpg' },
-                'Ice': { 'color': '#51C4E7', 'filename': 'iconType/ice.png', 'filtercolor': 'rgba(81, 196, 231, 0.25)', 'backgroundName': 'imagesBackground/ice.jpg' },
-                'Normal': { 'color': '#A4ACAF', 'filename': 'iconType/normal.png', 'filtercolor': 'rgba(164, 172, 175, 0.25)', 'backgroundName': 'imagesBackground/normal.jpg' },
-                'Poison': { 'color': '#B97FC9', 'filename': 'iconType/poison.png', 'filtercolor': 'rgba(185, 127, 201, 0.25)', 'backgroundName': 'imagesBackground/poison.jpg' },
-                'Psychic': { 'color': '#F366B9', 'filename': 'iconType/psychic.png', 'filtercolor': 'rgba(243, 102, 185, 0.25)', 'backgroundName': 'imagesBackground/psychic.jpg' },
-                'Rock': { 'color': '#d3b42a', 'filename': 'iconType/rock.png', 'filtercolor': 'rgba(163, 140, 33, 0.25)', 'backgroundName': 'imagesBackground/rock.jpg' },
-                'Steel': { 'color': '#9EB7B8', 'filename': 'iconType/steel.png', 'filtercolor': 'rgba(158, 183, 184, 0.25)', 'backgroundName': 'imagesBackground/steel.jpg' },
-                'Water': { 'color': '#a8d8f8', 'filename': 'iconType/water.png', 'filtercolor': 'rgba(69, 146, 196, 0.25)', 'backgroundName': 'imagesBackground/water.jpg' }
+                'Electric': { 'color': '#EED535', 'filename': 'iconType/electric.jpg', 'filtercolor': 'rgba(238, 213, 53, 0.25)', 'backgroundName': 'imagesBackground/electric.jpg' },
+                'Bug': { 'color': '#729F3F', 'filename': 'iconType/bug.jpg', 'filtercolor': 'rgba(114, 159, 63, 0.25)', 'backgroundName': 'imagesBackground/bug.jpg' },
+                'Dark': { 'color': '#c7c5c5', 'filename': 'iconType/dark.jpg', 'filtercolor': 'rgba(112, 112, 112, 0.25)', 'backgroundName': 'imagesBackground/dark.jpg' },
+                'Dragon': { 'color': '#53A4CF', 'filename': 'iconType/dragon.jpg', 'filtercolor': 'rgba(83, 164, 207, 0.25)', 'backgroundName': 'imagesBackground/dragon.jpg' },
+                'Fairy': { 'color': '#FDB9E9', 'filename': 'iconType/fairy.jpg', 'filtercolor': 'rgba(253, 185, 233, 0.25)', 'backgroundName': 'imagesBackground/fairy.jpg' },
+                'Fighting': { 'color': '#D56723', 'filename': 'iconType/fighting.jpg', 'filtercolor': 'rgba(213, 103, 35, 0.25)', 'backgroundName': 'imagesBackground/fighting.jpg' },
+                'Fire': { 'color': '#FD7D24', 'filename': 'iconType/fire.jpg', 'filtercolor': 'rgba(253, 125, 36, 0.25)', 'backgroundName': 'imagesBackground/fire.jpg' },
+                'Flying': { 'color': '#3DC7EF', 'filename': 'iconType/flying.jpg', 'filtercolor': 'rgba(61, 199, 239, 0.25)', 'backgroundName': 'imagesBackground/flying.jpg' },
+                'Ghost': { 'color': '#b088f0', 'filename': 'iconType/ghost.jpg', 'filtercolor': 'rgba(123, 98, 163, 0.25)', 'backgroundName': 'imagesBackground/ghost.jpg' },
+                'Grass': { 'color': '#9BCC50', 'filename': 'iconType/grass.jpg', 'filtercolor': 'rgba(155, 204, 80, 0.25)', 'backgroundName': 'imagesBackground/grass.jpg' },
+                'Ground': { 'color': '#F7DE3F', 'filename': 'iconType/ground.jpg', 'filtercolor': 'rgba(247, 222, 63, 0.25)', 'backgroundName': 'imagesBackground/ground.jpg' },
+                'Ice': { 'color': '#51C4E7', 'filename': 'iconType/ice.jpg', 'filtercolor': 'rgba(81, 196, 231, 0.25)', 'backgroundName': 'imagesBackground/ice.jpg' },
+                'Normal': { 'color': '#A4ACAF', 'filename': 'iconType/normal.jpg', 'filtercolor': 'rgba(164, 172, 175, 0.25)', 'backgroundName': 'imagesBackground/normal.jpg' },
+                'Poison': { 'color': '#B97FC9', 'filename': 'iconType/poison.jpg', 'filtercolor': 'rgba(185, 127, 201, 0.25)', 'backgroundName': 'imagesBackground/poison.jpg' },
+                'Psychic': { 'color': '#F366B9', 'filename': 'iconType/psychic.jpg', 'filtercolor': 'rgba(243, 102, 185, 0.25)', 'backgroundName': 'imagesBackground/psychic.jpg' },
+                'Rock': { 'color': '#d3b42a', 'filename': 'iconType/rock.jpg', 'filtercolor': 'rgba(163, 140, 33, 0.25)', 'backgroundName': 'imagesBackground/rock.jpg' },
+                'Steel': { 'color': '#9EB7B8', 'filename': 'iconType/steel.jpg', 'filtercolor': 'rgba(158, 183, 184, 0.25)', 'backgroundName': 'imagesBackground/steel.jpg' },
+                'Water': { 'color': '#a8d8f8', 'filename': 'iconType/water.jpg', 'filtercolor': 'rgba(69, 146, 196, 0.25)', 'backgroundName': 'imagesBackground/water.jpg' }
             };
 
             // Verifica se o tipo existe no objeto antes de aplicar a sombra
