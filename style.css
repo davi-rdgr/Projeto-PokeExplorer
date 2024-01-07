@@ -134,10 +134,6 @@ input:focus {
     margin-bottom: 10px;
 }
 
-.imagePokemonType {
-    width: 60px;
-}
-
 .pokebola-icon {
     height: 60px;
     object-fit: contain;
