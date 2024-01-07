@@ -212,8 +212,6 @@ input:focus {
 
 }
 
-/* GRID ORGANIZATION */
-
 .content-grid {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -225,10 +223,6 @@ input:focus {
 .att-text {
     text-align: right;
 }
-
-
-/* ---------------------------- */
-
 
 .content-imageId {
     display: flex;
@@ -262,9 +256,12 @@ input:focus {
     border-radius: 15px;
 }
 
+/* RESPONSIVIDADE: */
+
+/* Para telas de smartphones padrão:  */
 @media screen and (max-width: 567px) {
     html {
-        font-size: 9px;
+        font-size: 9.2px;
     }
 
     .content-main {
@@ -276,7 +273,7 @@ input:focus {
     }
 
     .pokedex {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .navbarSpace {
@@ -289,6 +286,8 @@ input:focus {
     }
 
 }
+
+/* Tablets modo retrato: */
 
 @media screen and (min-width: 568px) and (max-width: 768px) {
     html {
@@ -317,6 +316,9 @@ input:focus {
     }
 }
 
+
+/* Tablets modo paisagem: */
+
 @media screen and (min-width: 769px) and (max-width: 992px) {
     html {
         font-size: 12px;
@@ -332,6 +334,7 @@ input:focus {
 
 }
 
+/* Laptops, desktops e alguns tablets em modo paisagem: */
 
 @media screen and (min-width: 993px) and (max-width: 1280px) {
     html {
@@ -343,7 +346,9 @@ input:focus {
     }
 }
 
-@media screen and (min-width: 90em) {
+/* Telas widescreen e ultrawide padrão */
+
+@media screen and (min-width: 1440px) {
     html {
         font-size: 16px;
     }
@@ -351,9 +356,9 @@ input:focus {
     .content-main {
         flex-direction: row;
     }
-
 }
 
+/* Telas 4k + - */
 
 @media screen and (min-width: 240em) {
     html {
@@ -366,6 +371,8 @@ input:focus {
 
 
 }
+
+/* Celulares deitados */
 
 @media screen and (max-width: 926px) and (orientation: landscape) {
 
