@@ -286,6 +286,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
             console.log(typeShadows[pokemonTypes[0]].filename)
 
             // Verifica se o tipo existe no objeto antes de aplicar a sombra
+
             if (typeShadows.hasOwnProperty(pokemonTypes[0])) {
                 imagePokemon.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[pokemonTypes[0]].color})`;
                 imageID.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[0]].color})`;
@@ -305,10 +306,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 }
 
 
-                // imagePokemonType.src = typeShadows[pokemonTypes[0]].filename;
-                imagePokemonType.style.backgroundImage = `url('${typeShadows[pokemonTypes[0]].filename}')`;
-                imagePokemonType.style.backgroundRepeat = 'no-repeat';
-                imagePokemonType.style.backgroundSize = '60px';
+                imagePokemonType.src = typeShadows[pokemonTypes[0]].filename;
 
 
                 const body = document.body;
