@@ -301,6 +301,19 @@ input:focus {
     .content-attributes {
         width: 100%;
     }
+
+    .pokedex {
+        font-size: 2.188rem;
+    }
+
+    .navbarSpace {
+        width: 11%;
+    }
+
+    form {
+        position: relative;
+        width: 11%;
+    }
 }
 
 @media screen and (min-width: 50.75em) {
