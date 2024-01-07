@@ -18,10 +18,12 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
 .classtest {
     display: flex;
     flex-direction: row;
 }
+
 .headerShadowDiv {
     background-color: rgba(24, 24, 27, 0.9);
     width: 100vw;
@@ -58,7 +60,7 @@ form input {
     border-radius: 50px;
     padding: 1rem 1rem;
     font-size: 1.063rem;
-    height: 40px;
+    height: 2.5rem;
 }
 
 .optColors {
@@ -72,7 +74,7 @@ form button {
     height: 0%;
     aspect-ratio: 1;
     position: absolute;
-    right: 5px;
+    right: 0.313rem;
     top: 5%;
     cursor: pointer;
 }
@@ -92,13 +94,13 @@ input:focus {
 }
 
 .navbarSpace {
-    width: 252px;
+    width: 15.75rem;
     display: flex;
     justify-content: right;
 }
 
 .navbarSpace svg {
-    height: 40px;
+    height: 2.5rem;
 }
 
 .navbarAncora {
@@ -112,7 +114,7 @@ input:focus {
 .pokedex {
     font-family: 'Pocket Monk', sans-serif;
     color: white;
-    font-size: 30px;
+    font-size: 1.875rem;
     text-shadow: 1px 1px 2px black;
     white-space: nowrap;
     color: #c7c5c5;
@@ -121,37 +123,50 @@ input:focus {
 .content-titleType {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 1.25rem;
 }
 
 .content-topside {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 0.938rem;
     margin-bottom: 10px;
 }
 
-.pokemonType {
-    font-size: 25px;
-}
-
-.pokemon-name {
-    font-size: 80px;
-}
-
 .pokebola-icon {
-    height: 70px;
+    height: 3.75rem;
     object-fit: contain;
 }
 
+.pokemon-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.abilitiesContent {
+    text-align: left;
+}
+
+.pokemonType,
+.pokemonTypetwo,
+.pokeAbi {
+    font-size: 1.563rem;
+}
+
+.pokemon-name {
+    font-size: 5rem;
+}
+
+
 .imagePokemon {
-    height: 450px;
+    height: 25rem;
 }
 
 .sectionPokemonInfo {
     display: flex;
     flex-direction: column;
-    margin-top: 120px;
+    margin-top: 7.5rem;
 }
 
 .intro-screen {
@@ -159,8 +174,8 @@ input:focus {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 600px;
-    gap: 20px;
+    height: 37.5rem;
+    gap: 1.25rem;
     border: 1px solid #ffffff;
     border-radius: 15px;
     background-color: rgba(24, 24, 27, 0.6);
@@ -168,14 +183,14 @@ input:focus {
 }
 
 .intro-pokeimage {
-    height: 350px;
+    height: 21.875rem;
 }
 
 .intro-p {
     font-family: 'Pocket Monk', sans-serif;
     color: #ffffff;
     text-align: center;
-    font-size: 50px;
+    font-size: 3.125rem;
 }
 
 .content-main {
@@ -184,17 +199,15 @@ input:focus {
     justify-content: space-between;
     width: 100%;
     align-items: center;
-
 }
-
 
 .content-attributes {
     width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 30px;
-    font-size: 30px;
+    gap: 1.875rem;
+    font-size: 1.75rem;
 
 }
 
@@ -204,7 +217,7 @@ input:focus {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: repeat(8, 1fr);
-    gap: 33px;
+    gap: 2.063rem;
 
 }
 
@@ -225,7 +238,7 @@ input:focus {
 }
 
 .imageID {
-    font-size: 150px;
+    font-size: 5rem;
     color: #ffffff;
 }
 
@@ -236,14 +249,101 @@ input:focus {
 
 .progress-container {
     width: 80%;
-    height: 20px;
+    height: 1.25rem;
     background-color: #A19E9E;
     position: relative;
     border-radius: 15px;
-    margin: 5px auto;
+    margin: 0.313rem auto;
 }
 
 .progress {
     height: 100%;
     border-radius: 15px;
+}
+
+@media screen and (min-width: 10.75em) {
+    html {
+        font-size: 9px;
+    }
+
+    .content-main {
+        flex-direction: column-reverse;
+    }
+
+    .content-attributes {
+        width: 100%;
+    }
+
+    .pokedex {
+        font-size: 10px;
+    }
+
+    .navbarSpace {
+        width: 8rem;
+    }
+
+    form {
+        position: relative;
+        width: 28%;
+    }
+
+}
+
+@media screen and (min-width: 40.75em) {
+    html {
+        font-size: 6px;
+    }
+
+    .content-main {
+        flex-direction: row;
+    }
+
+    .content-attributes {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 50.75em) {
+    html {
+        font-size: 7px;
+    }
+
+    .content-main {
+        flex-direction: row;
+    }
+
+    .content-attributes {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 80em) {
+    html {
+        font-size: 13.5px;
+    }
+
+    .content-main {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 90em) {
+    html {
+        font-size: 16px;
+    }
+
+    .content-main {
+        flex-direction: row;
+    }
+}
+
+
+@media screen and (min-width: 240em) {
+    html {
+        font-size: 29px;
+    }
+
+    .content-main {
+        flex-direction: row;
+    }
 }

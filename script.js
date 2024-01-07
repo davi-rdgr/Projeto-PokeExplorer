@@ -1,5 +1,7 @@
-const content = document.querySelector('.content-main')
-/* let progressAnimationExecuted = false; */
+let content = document.querySelector('.content-main')
+let sectionPokemonInfo = document.querySelector('.sectionPokemonInfo')
+let catchalert = document.querySelector('.catch-alert')
+
 content.style.display = 'none'
 // Adiciona um ouvinte de eventos para o evento de envio do formulário
 // Evita o envio padrão do formulário que recarregaria a página
@@ -17,6 +19,8 @@ document.querySelector('form').addEventListener('submit', function (event) {
         .then(data => {
 
             content.style.display = 'flex'
+            sectionPokemonInfo.style.display = 'flex'
+            catchalert.style.display = 'none'
 
             // Função para capitalizar a primeira letra de uma string
             function capitalizarPrimeiraLetra(str) {
@@ -25,15 +29,23 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
             // recebendo o valor da API e armazenando
             const name = data.name;
-            const nomeCapitalizado = capitalizarPrimeiraLetra(name);
+            const nameCapitalizado = capitalizarPrimeiraLetra(name);
             const ident = data.id;
-            const type = data.types['0'].type.name;
-            const typetwo = data.types['1'] ? data.types['1'].type.name : null;
-            const typeCapitalizado = capitalizarPrimeiraLetra(type);
-            let typetwoCapitalizado = null;
-            if (typetwo) {
-                typetwoCapitalizado = capitalizarPrimeiraLetra(typetwo);
-            }
+            const types = data.types;
+            let pokemonTypes = [];
+            types.forEach((typeData) => {
+                const typeName = capitalizarPrimeiraLetra(typeData.type.name);
+                pokemonTypes.push(typeName);
+            });
+
+            const abilities = data.abilities;
+            let pokemonAbilities = []
+
+            abilities.forEach(abilities => {
+                const abilitiesFor = capitalizarPrimeiraLetra(abilities.ability.name)
+                pokemonAbilities.push(abilitiesFor);
+            });
+
             const image = data.sprites.other['official-artwork'].front_default;
             const weight = data.weight;
             const height = data.height;
@@ -50,13 +62,24 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const pokemonNameH1 = document.querySelector('.pokemon-name');
             const imagePokemonType = document.querySelector('.imagePokemonType');
             const pokemonType = document.querySelector('.pokemonType');
+            const pokemonTypetwo = document.querySelector('.pokemonTypetwo');
 
-            pokemonNameH1.innerHTML = nomeCapitalizado;
-            if (typetwo) {
-                pokemonType.innerHTML = `${typeCapitalizado} ${typetwoCapitalizado}`;
-            } else {
-                pokemonType.innerHTML = typeCapitalizado;
+            pokemonNameH1.innerHTML = nameCapitalizado;
+            pokemonType.innerHTML = '';
+            pokemonTypetwo.innerHTML = '';
+
+            if (pokemonTypes.length > 0) {
+                pokemonType.innerHTML = pokemonTypes[0];
+
+                if (pokemonTypes.length > 1) {
+                    pokemonTypetwo.innerHTML = pokemonTypes[1];
+                }
             }
+
+            const abilitiesSpan = document.querySelector('.pokeAbilities')
+            const abilitiesSpanTwo = document.querySelector('.pokeAbilitiesTwo')
+            abilitiesSpan.textContent = pokemonAbilities[0]
+            abilitiesSpanTwo.textContent = pokemonAbilities[1]
 
             if (
                 name === "articuno" ||
@@ -113,7 +136,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 console.log(name + " não é um Pokémon lendário.");
             }
 
-
             // armazenando o container que receberá os nomes dos atributos.
             // enviando para o html o nome dos atributos quando a consulta for realizada.
 
@@ -167,7 +189,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
             // essa const recebe a div que introduz a tela, e faz um teste para identificar se há um tipo de pokemon escolhido. Caso sim, ela anula a tela, o que resulta na tela de apresentação de atributos padrão.
 
             const introPoke = document.querySelector('.intro-screen')
-            if (type) {
+            if (pokemonTypes[0]) {
                 introPoke.style.display = 'none'
             }
 
@@ -242,83 +264,92 @@ document.querySelector('form').addEventListener('submit', function (event) {
             }, 200)
 
             const typeShadows = {
-                'electric': { 'color': '#EED535', 'filename': 'iconType/electric.png', 'filtercolor': 'rgba(238, 213, 53, 0.25)', 'backgroundName': 'imagesBackground/electric.jpg' },
-                'bug': { 'color': '#729F3F', 'filename': 'iconType/bug.png', 'filtercolor': 'rgba(114, 159, 63, 0.25)', 'backgroundName': 'imagesBackground/bug.jpg' },
-                'dark': { 'color': '#c7c5c5', 'filename': 'iconType/dark.png', 'filtercolor': 'rgba(112, 112, 112, 0.25)', 'backgroundName': 'imagesBackground/dark.jpg' },
-                'dragon': { 'color': '#53A4CF', 'filename': 'iconType/dragon.png', 'filtercolor': 'rgba(83, 164, 207, 0.25)', 'backgroundName': 'imagesBackground/dragon.jpg' },
-                'fairy': { 'color': '#FDB9E9', 'filename': 'iconType/fairy.png', 'filtercolor': 'rgba(253, 185, 233, 0.25)', 'backgroundName': 'imagesBackground/fairy.jpg' },
-                'fighting': { 'color': '#D56723', 'filename': 'iconType/fighting.png', 'filtercolor': 'rgba(213, 103, 35, 0.25)', 'backgroundName': 'imagesBackground/fighting.jpg' },
-                'fire': { 'color': '#FD7D24', 'filename': 'iconType/fire.png', 'filtercolor': 'rgba(253, 125, 36, 0.25)', 'backgroundName': 'imagesBackground/fire.jpg' },
-                'flying': { 'color': '#3DC7EF', 'filename': 'iconType/flying.png', 'filtercolor': 'rgba(61, 199, 239, 0.25)', 'backgroundName': 'imagesBackground/flying.jpg' },
-                'ghost': { 'color': '#b088f0', 'filename': 'iconType/ghost.png', 'filtercolor': 'rgba(123, 98, 163, 0.25)', 'backgroundName': 'imagesBackground/ghost.jpg' },
-                'grass': { 'color': '#9BCC50', 'filename': 'iconType/grass.png', 'filtercolor': 'rgba(155, 204, 80, 0.25)', 'backgroundName': 'imagesBackground/grass.jpg' },
-                'ground': { 'color': '#F7DE3F', 'filename': 'iconType/ground.png', 'filtercolor': 'rgba(247, 222, 63, 0.25)', 'backgroundName': 'imagesBackground/ground.jpg' },
-                'ice': { 'color': '#51C4E7', 'filename': 'iconType/ice.png', 'filtercolor': 'rgba(81, 196, 231, 0.25)', 'backgroundName': 'imagesBackground/ice.jpg' },
-                'normal': { 'color': '#A4ACAF', 'filename': 'iconType/normal.png', 'filtercolor': 'rgba(164, 172, 175, 0.25)', 'backgroundName': 'imagesBackground/normal.jpg' },
-                'poison': { 'color': '#B97FC9', 'filename': 'iconType/poison.png', 'filtercolor': 'rgba(185, 127, 201, 0.25)', 'backgroundName': 'imagesBackground/poison.jpg' },
-                'psychic': { 'color': '#F366B9', 'filename': 'iconType/psychic.png', 'filtercolor': 'rgba(243, 102, 185, 0.25)', 'backgroundName': 'imagesBackground/psychic.jpg' },
-                'rock': { 'color': '#d3b42a', 'filename': 'iconType/rock.png', 'filtercolor': 'rgba(163, 140, 33, 0.25)', 'backgroundName': 'imagesBackground/rock.jpg' },
-                'steel': { 'color': '#9EB7B8', 'filename': 'iconType/steel.png', 'filtercolor': 'rgba(158, 183, 184, 0.25)', 'backgroundName': 'imagesBackground/steel.jpg' },
-                'water': { 'color': '#a8d8f8', 'filename': 'iconType/water.png', 'filtercolor': 'rgba(69, 146, 196, 0.25)', 'backgroundName': 'imagesBackground/water.jpg' }
+                Electric: { color: '#EED535', filename: 'iconType/electric.jpg', filtercolor: 'rgba(238, 213, 53, 0.25)', backgroundName: 'imagesBackground/electric.jpg' },
+                Bug: { color: '#729F3F', filename: 'iconType/bug.jpg', filtercolor: 'rgba(114, 159, 63, 0.25)', backgroundName: 'imagesBackground/bug.jpg' },
+                Dark: { color: '#c7c5c5', filename: 'iconType/dark.jpg', filtercolor: 'rgba(112, 112, 112, 0.25)', backgroundName: 'imagesBackground/dark.jpg' },
+                Dragon: { color: '#53A4CF', filename: 'iconType/dragon.jpg', filtercolor: 'rgba(83, 164, 207, 0.25)', backgroundName: 'imagesBackground/dragon.jpg' },
+                Fairy: { color: '#FDB9E9', filename: 'iconType/fairy.jpg', filtercolor: 'rgba(253, 185, 233, 0.25)', backgroundName: 'imagesBackground/fairy.jpg' },
+                Fighting: { color: '#D56723', filename: 'iconType/fighting.jpg', filtercolor: 'rgba(213, 103, 35, 0.25)', backgroundName: 'imagesBackground/fighting.jpg' },
+                Fire: { color: '#FD7D24', filename: 'iconType/fire.jpg', filtercolor: 'rgba(253, 125, 36, 0.25)', backgroundName: 'imagesBackground/fire.jpg' },
+                Flying: { color: '#3DC7EF', filename: 'iconType/flying.jpg', filtercolor: 'rgba(61, 199, 239, 0.25)', backgroundName: 'imagesBackground/flying.jpg' },
+                Ghost: { color: '#b088f0', filename: 'iconType/ghost.jpg', filtercolor: 'rgba(123, 98, 163, 0.25)', backgroundName: 'imagesBackground/ghost.jpg' },
+                Grass: { color: '#9BCC50', filename: 'iconType/grass.jpg', filtercolor: 'rgba(155, 204, 80, 0.25)', backgroundName: 'imagesBackground/grass.jpg' },
+                Ground: { color: '#F7DE3F', filename: 'iconType/ground.jpg', filtercolor: 'rgba(247, 222, 63, 0.25)', backgroundName: 'imagesBackground/ground.jpg' },
+                Ice: { color: '#51C4E7', filename: 'iconType/ice.jpg', filtercolor: 'rgba(81, 196, 231, 0.25)', backgroundName: 'imagesBackground/ice.jpg' },
+                Normal: { color: '#A4ACAF', filename: 'iconType/normal.jpg', filtercolor: 'rgba(164, 172, 175, 0.25)', backgroundName: 'imagesBackground/normal.jpg' },
+                Poison: { color: '#B97FC9', filename: 'iconType/poison.jpg', filtercolor: 'rgba(185, 127, 201, 0.25)', backgroundName: 'imagesBackground/poison.jpg' },
+                Psychic: { color: '#F366B9', filename: 'iconType/psychic.jpg', filtercolor: 'rgba(243, 102, 185, 0.25)', backgroundName: 'imagesBackground/psychic.jpg' },
+                Rock: { color: '#d3b42a', filename: 'iconType/rock.jpg', filtercolor: 'rgba(163, 140, 33, 0.25)', backgroundName: 'imagesBackground/rock.jpg' },
+                Steel: { color: '#9EB7B8', filename: 'iconType/steel.jpg', filtercolor: 'rgba(158, 183, 184, 0.25)', backgroundName: 'imagesBackground/steel.jpg' },
+                Water: { color: '#a8d8f8', filename: 'iconType/water.jpg', filtercolor: 'rgba(69, 146, 196, 0.25)', backgroundName: 'imagesBackground/water.jpg' }
             };
+            console.log(typeShadows[pokemonTypes[0]].filename)
 
             // Verifica se o tipo existe no objeto antes de aplicar a sombra
-            if (typeShadows.hasOwnProperty(type)) {
-                imagePokemon.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type].color})`;
-                imageID.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
-                pokemonNameH1.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[type].color})`;
-                pokemonNameH1.style.color = typeShadows[type].color;
-                pokemonType.style.color = typeShadows[type].color;
-                pokemonType.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
-                imagePokemonType.src = typeShadows[type].filename;
+
+            if (typeShadows.hasOwnProperty(pokemonTypes[0])) {
+                imagePokemon.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[pokemonTypes[0]].color})`;
+                imageID.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[0]].color})`;
+                pokemonNameH1.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[pokemonTypes[0]].color})`;
+                pokemonNameH1.style.color = typeShadows[pokemonTypes[0]].color;
+                pokemonType.style.color = typeShadows[pokemonTypes[0]].color;
+                pokemonType.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[0]].color})`;
+                abilitiesSpan.style.color = typeShadows[pokemonTypes[0]].color;
+                abilitiesSpanTwo.style.color = typeShadows[pokemonTypes[0]].color;
+                abilitiesSpan.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[0]].color})`;
+                abilitiesSpanTwo.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[0]].color})`;
+
+                if (pokemonTypes[1]) {
+                    pokemonTypetwo.innerHTML = pokemonTypes[1];
+                    pokemonTypetwo.style.color = typeShadows[pokemonTypes[1]].color;
+                    pokemonTypetwo.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[1]].color})`;
+                }
+
+
+                imagePokemonType.src = typeShadows[pokemonTypes[0]].filename;
+
 
                 const body = document.body;
-                body.style.backgroundImage = `url('${typeShadows[type].backgroundName}')`;
+                body.style.backgroundImage = `url('${typeShadows[pokemonTypes[0]].backgroundName}')`;
 
                 const optColors = document.querySelectorAll('.optColors');
                 optColors.forEach(optColors => {
-                    optColors.style.stroke = typeShadows[type].color;
-                    optColors.style.color = typeShadows[type].color;
+                    optColors.style.stroke = typeShadows[pokemonTypes[0]].color;
+                    optColors.style.color = typeShadows[pokemonTypes[0]].color;
 
                 });
 
                 const attcolor = document.querySelectorAll('.att-color')
                 attcolor.forEach(attcolor => {
-                    attcolor.style.color = typeShadows[type].color
-                    attcolor.style.filter = `drop-shadow(1px 1px 2px ${typeShadows[type].color})`;
+                    attcolor.style.color = typeShadows[pokemonTypes[0]].color
+                    attcolor.style.filter = `drop-shadow(1px 1px 2px ${typeShadows[pokemonTypes[0]].color})`;
                 })
 
                 const progress = document.querySelectorAll('.progress')
                 progress.forEach(progress => {
-                    progress.style.backgroundColor = typeShadows[type].color
-                    progress.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[type].color})`;
+                    progress.style.backgroundColor = typeShadows[pokemonTypes[0]].color
+                    progress.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[0]].color})`;
                     progress.style.width = '0'
-                    /* if (!progressAnimationExecuted) {
-                        progress.style.width = '0'
-                        progressAnimationExecuted = true
-                    } */
 
                 })
 
                 const progresscontainer = document.querySelectorAll('.progress-container')
                 progresscontainer.forEach(progresscontainer => {
-                    progresscontainer.style.backgroundColor = typeShadows[type].filtercolor
+                    progresscontainer.style.backgroundColor = typeShadows[pokemonTypes[0]].filtercolor
                 })
 
             }
 
         })
 
-    /* .catch((err) => {
-        // Em caso de erro (Pokemon não encontrado ou erro na API), exibe uma mensagem de erro
-        const sectionPokemonInfo = document.getElementById('sectionPokemonInfo');
-        if (sectionPokemonInfo.firstChild) {
-            sectionPokemonInfo.removeChild(sectionPokemonInfo.firstChild);
-        }
-
-        const errorElement = document.createElement('p');
-        errorElement.textContent = "Pokemon não encontrado!";
-        sectionPokemonInfo.appendChild(errorElement);
-    }); */
+        .catch((err) => {
+            console.error('Error');
+            sectionPokemonInfo.style.display = 'none'
+            content.style.display = 'none'
+            catchalert.style.display = 'block'
+            catchalert.innerHTML = 'Insira um Pokémon válido!'
+            catchalert.style.fontSize = '30px'
+            catchalert.style.color = 'white'
+        });
 
 });
