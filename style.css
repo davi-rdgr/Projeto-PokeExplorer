@@ -261,7 +261,7 @@ input:focus {
     border-radius: 15px;
 }
 
-@media screen and (min-width: 10.75em) {
+@media screen and (max-width: 567px) {
     html {
         font-size: 9px;
     }
@@ -289,13 +289,13 @@ input:focus {
 
 }
 
-@media screen and (min-width: 40.75em) {
+@media screen and (min-width: 568px) and (max-width: 768px) {
     html {
-        font-size: 6px;
+        font-size: 10px;
     }
 
     .content-main {
-        flex-direction: row;
+        flex-direction: column-reverse;
     }
 
     .content-attributes {
@@ -316,9 +316,9 @@ input:focus {
     }
 }
 
-@media screen and (min-width: 50.75em) {
+@media screen and (min-width: 769px) and (max-width: 992px) {
     html {
-        font-size: 7px;
+        font-size: 12px;
     }
 
     .content-main {
@@ -328,11 +328,13 @@ input:focus {
     .content-attributes {
         width: 100%;
     }
+
 }
 
-@media screen and (min-width: 80em) {
+
+@media screen and (min-width: 993px) and (max-width: 1280px) {
     html {
-        font-size: 13.5px;
+        font-size: 13px;
     }
 
     .content-main {
@@ -348,15 +350,25 @@ input:focus {
     .content-main {
         flex-direction: row;
     }
+
 }
 
 
 @media screen and (min-width: 240em) {
     html {
-        font-size: 29px;
+        font-size: 35px;
     }
 
     .content-main {
         flex-direction: row;
+    }
+
+
+}
+
+@media screen and (max-width: 926px) and (orientation: landscape) {
+
+    html {
+        font-size: 6px;
     }
 }
