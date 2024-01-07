@@ -283,7 +283,29 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 Steel: { color: '#9EB7B8', filename: 'iconType/steel.jpg', filtercolor: 'rgba(158, 183, 184, 0.25)', backgroundName: 'imagesBackground/steel.jpg' },
                 Water: { color: '#a8d8f8', filename: 'iconType/water.jpg', filtercolor: 'rgba(69, 146, 196, 0.25)', backgroundName: 'imagesBackground/water.jpg' }
             };
-            console.log(typeShadows[pokemonTypes[0]].filename)
+
+            const typeFilenames = {
+                Electric: 'iconType/electric.jpg',
+                Bug: 'iconType/bug.jpg',
+                Dark: 'iconType/dark.jpg',
+                Dragon: 'iconType/dragon.jpg',
+                Fairy: 'iconType/fairy.jpg',
+                Fighting: 'iconType/fighting.jpg',
+                Fire: 'iconType/fire.jpg',
+                Flying: 'iconType/flying.jpg',
+                Ghost: 'iconType/ghost.jpg',
+                Grass: 'iconType/grass.jpg',
+                Ground: 'iconType/ground.jpg',
+                Ice: 'iconType/ice.jpg',
+                Normal: 'iconType/normal.jpg',
+                Poison: 'iconType/poison.jpg',
+                Psychic: 'iconType/psychic.jpg',
+                Rock: 'iconType/rock.jpg',
+                Steel: 'iconType/steel.jpg',
+                Water: 'iconType/water.jpg'
+            };
+            
+            imagePokemonType.src = typeFilenames.Fire;
 
             // Verifica se o tipo existe no objeto antes de aplicar a sombra
 
@@ -306,7 +328,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 }
 
 
-                imagePokemonType.src = typeShadows[pokemonTypes[0]].filename;
+                /* imagePokemonType.src = typeShadows[pokemonTypes[0]].filename; */
 
 
                 const body = document.body;
