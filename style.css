@@ -11,7 +11,7 @@
 }
 
 body {
-    background-image: url(images/wallpaperflare.com_wallpaper\(5\).jpg);
+    background-image: url(images/backgrounds.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -61,6 +61,7 @@ form input {
     padding: 1rem 1rem;
     font-size: 1.063rem;
     height: 2.5rem;
+/*     border: .1px solid white; */
 }
 
 .optColors {
@@ -176,10 +177,10 @@ input:focus {
     flex-direction: column;
     height: 37.5rem;
     gap: 1.25rem;
-    border: 1px solid #ffffff;
+/*     border: 1px solid #ffffff;
     border-radius: 15px;
     background-color: rgba(24, 24, 27, 0.6);
-    box-shadow: 1px 1px 10px #ffffff;
+    box-shadow: 1px 1px 10px #ffffff; */
 }
 
 .intro-pokeimage {
@@ -313,6 +314,9 @@ input:focus {
         position: relative;
         width: 11%;
     }
+    * {
+        background-color: red;
+    }
 }
 
 
@@ -330,7 +334,9 @@ input:focus {
     .content-attributes {
         width: 100%;
     }
-
+    * {
+        background-color: blue;
+    }
 }
 
 /* Laptops, desktops e alguns tablets em modo paisagem: */
@@ -342,6 +348,9 @@ input:focus {
 
     .content-main {
         flex-direction: row;
+    }
+    * {
+        background-color: yellow;
     }
 }
 
@@ -355,6 +364,9 @@ input:focus {
     .content-main {
         flex-direction: row;
     }
+    * {
+        background-color: grey;
+    }
 }
 
 /* Telas 4k + - */
@@ -367,7 +379,9 @@ input:focus {
     .content-main {
         flex-direction: row;
     }
-
+    * {
+        background-color: purple;
+    }
 
 }
 
