@@ -314,9 +314,7 @@ input:focus {
         position: relative;
         width: 11%;
     }
-    * {
-        background-color: red;
-    }
+
 }
 
 
@@ -334,14 +332,11 @@ input:focus {
     .content-attributes {
         width: 100%;
     }
-    * {
-        background-color: blue;
-    }
 }
 
 /* Laptops, desktops e alguns tablets em modo paisagem: */
 
-@media screen and (min-width: 993px) and (max-width: 1280px) {
+@media screen and (min-width: 993px) and (max-width: 1439px) {
     html {
         font-size: 13px;
     }
@@ -350,7 +345,7 @@ input:focus {
         flex-direction: row;
     }
     * {
-        background-color: yellow;
+        background-color: rgba(255, 255, 0, 0.041);
     }
 }
 
@@ -365,7 +360,7 @@ input:focus {
         flex-direction: row;
     }
     * {
-        background-color: grey;
+        background-color: rgba(128, 128, 128, 0.075);
     }
 }
 
@@ -378,9 +373,6 @@ input:focus {
 
     .content-main {
         flex-direction: row;
-    }
-    * {
-        background-color: purple;
     }
 
 }
