@@ -3,6 +3,7 @@ let sectionPokemonInfo = document.querySelector('.sectionPokemonInfo')
 let catchalert = document.querySelector('.catch-alert')
 
 content.style.display = 'none'
+
 // Adiciona um ouvinte de eventos para o evento de envio do formulário
 // Evita o envio padrão do formulário que recarregaria a página
 
@@ -11,7 +12,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
     // Obtém o valor digitado pelo usuário e converte para letras minúsculas
     const pokemonName = document.getElementById('pokemonName').value.toLowerCase();
-
     const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
     // Faz uma requisição para a API do PokeAPI
     fetch(apiUrl)
@@ -343,7 +343,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
         })
 
         .catch((err) => {
-            console.error('Error');
             sectionPokemonInfo.style.display = 'none'
             content.style.display = 'none'
             catchalert.style.display = 'block'
