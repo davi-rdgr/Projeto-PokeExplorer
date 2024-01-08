@@ -61,7 +61,7 @@ form input {
     padding: 1rem 1rem;
     font-size: 1.063rem;
     height: 2.5rem;
-/*     border: .1px solid white; */
+    /*     border: .1px solid white; */
 }
 
 .optColors {
@@ -177,7 +177,7 @@ input:focus {
     flex-direction: column;
     height: 37.5rem;
     gap: 1.25rem;
-/*     border: 1px solid #ffffff;
+    /*     border: 1px solid #ffffff;
     border-radius: 15px;
     background-color: rgba(24, 24, 27, 0.6);
     box-shadow: 1px 1px 10px #ffffff; */
@@ -348,17 +348,32 @@ input:focus {
 
 /* Telas widescreen e ultrawide padrão */
 
-@media screen and (min-width: 1440px) and (max-width: 1930px) {
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
     html {
-        font-size: 14px;
+        font-size: 13px;
+        /* font-size: 14px; */
     }
 
     .content-main {
         flex-direction: row;
     }
+
     * {
-        background-color: rgba(128, 128, 128, 0.178);
+        background-color: rgba(0, 255, 255, 0.075);
     }
+
+}
+
+@media screen and (min-width: 1920px) and (max-width: 3000px) {
+
+    html {
+        font-size: 18px;
+        /* font-size: 14px; */
+    }
+
+    /* * {
+        background-color: red;
+    } */
 }
 
 /* Telas 4k + - */
