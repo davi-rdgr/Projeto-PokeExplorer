@@ -344,23 +344,20 @@ input:focus {
     .content-main {
         flex-direction: row;
     }
-    * {
-        background-color: rgba(255, 255, 0, 0.041);
-    }
 }
 
 /* Telas widescreen e ultrawide padrão */
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1930px) {
     html {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .content-main {
         flex-direction: row;
     }
     * {
-        background-color: rgba(128, 128, 128, 0.075);
+        background-color: rgba(128, 128, 128, 0.178);
     }
 }
 
