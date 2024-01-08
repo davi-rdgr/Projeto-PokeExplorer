@@ -338,7 +338,7 @@ input:focus {
 
 @media screen and (min-width: 993px) and (max-width: 1439px) {
     html {
-        font-size: 13px;
+        font-size: 11.5px;
     }
 
     .content-main {
