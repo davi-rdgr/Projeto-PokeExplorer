@@ -12,9 +12,9 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
     // Obtém o valor digitado pelo usuário e converte para letras minúsculas
     const pokemonName = document.getElementById('pokemonName').value.toLowerCase();
-    const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+    const APIURL = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
     // Faz uma requisição para a API do PokeAPI
-    fetch(apiUrl)
+    fetch(APIURL)
         .then((res) => res.json()) // Converte a resposta em formato JSON
         .then(data => {
 
