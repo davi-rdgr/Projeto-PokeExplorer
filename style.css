@@ -17,6 +17,7 @@ body {
     background-position: center;
     width: 100vw;
     height: 100vh;
+
 }
 
 .classtest {
@@ -259,6 +260,7 @@ input:focus {
 /* RESPONSIVIDADE: */
 
 /* Para telas de smartphones padrão:  */
+
 @media screen and (max-width: 567px) {
     html {
         font-size: 9.2px;
@@ -351,29 +353,20 @@ input:focus {
 @media screen and (min-width: 1440px) and (max-width: 1919px) {
     html {
         font-size: 13px;
-        /* font-size: 14px; */
     }
 
     .content-main {
         flex-direction: row;
     }
-
-    * {
-        background-color: rgba(0, 255, 255, 0.075);
-    }
-
 }
 
 @media screen and (min-width: 1920px) and (max-width: 3000px) {
 
     html {
         font-size: 16.5px;
-        /* font-size: 14px; */
     }
 
-    /* * {
-        background-color: red;
-    } */
+
 }
 
 /* Telas 4k + - */
