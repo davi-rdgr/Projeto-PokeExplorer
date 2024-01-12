@@ -1,13 +1,23 @@
 @import url(https://db.onlinewebfonts.com/c/fd6fa80f1e3345834599de891cca3f4c?family=OCR+A+Extended);
 @import url('https://fonts.cdnfonts.com/css/pocket-monk');
 
+@font-face {
+    font-family: "OCR A Extended";
+    src: url("https://db.onlinewebfonts.com/t/fd6fa80f1e3345834599de891cca3f4c.eot");
+    src: url("https://db.onlinewebfonts.com/t/fd6fa80f1e3345834599de891cca3f4c.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/fd6fa80f1e3345834599de891cca3f4c.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/fd6fa80f1e3345834599de891cca3f4c.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/fd6fa80f1e3345834599de891cca3f4c.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/fd6fa80f1e3345834599de891cca3f4c.svg#OCR A Extended")format("svg");
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    font-family: OCR A Extended;
+    font-family: 'OCR A Extended', sans-serif;
 }
 
 body {
@@ -178,10 +188,6 @@ input:focus {
     flex-direction: column;
     height: 37.5rem;
     gap: 1.25rem;
-    /*     border: 1px solid #ffffff;
-    border-radius: 15px;
-    background-color: rgba(24, 24, 27, 0.6);
-    box-shadow: 1px 1px 10px #ffffff; */
 }
 
 .intro-pokeimage {
@@ -358,15 +364,6 @@ input:focus {
     .content-main {
         flex-direction: row;
     }
-}
-
-@media screen and (min-width: 1920px) and (max-width: 3000px) {
-
-    html {
-        font-size: 16.5px;
-    }
-
-
 }
 
 /* Telas 4k + - */
