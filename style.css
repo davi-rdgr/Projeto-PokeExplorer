@@ -21,7 +21,7 @@
 }
 
 body {
-    background-image: url(images/backgrounds.jpg);
+    background-image: url(/f078kw2v.bmp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -188,7 +188,92 @@ input:focus {
     flex-direction: column;
     height: 37.5rem;
     gap: 1.25rem;
+    border-radius: 10px;
 }
+
+/* ////////////////// */
+
+
+.banners {
+    display: flex;
+    width: 80%;
+    gap: .9rem;
+}
+
+.bannersImages {
+    width: 100%;
+    transition: all .3s ease;
+}
+
+.divImage {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: .8;
+    transition: .5s ease;
+    border-radius: 10px;
+
+}
+
+.banners .bannersImages {
+    flex-basis: 25%;
+    height: 100%;
+    display: block;
+}
+
+.banners .p-div {
+    background-color: #18181baf;
+    padding: 1rem;
+    width: 100%;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    opacity: .2;
+    transform: translateY(100%);
+    transition: all .5s ease;
+    border-top-left-radius: 10%;
+}
+
+.divImage:hover .p-div {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.bannersImages:hover {
+    cursor: pointer;
+    max-width: 100%;
+    filter: contrast(120%);
+}
+
+.createBy {
+    position: absolute;
+    bottom: 1rem;
+    color: #c7c5c5;
+}
+
+.p-image {
+
+    margin: 0 auto;
+    display: block;
+}
+
+.p-teste {
+    font-size: 2rem;
+    margin-top: 1.2rem;
+    color: white;
+}
+
+.p-description {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-top: 2rem;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 2rem;
+}
+
+/* ////////////////// */
 
 .intro-pokeimage {
     height: 21.875rem;
@@ -293,6 +378,10 @@ input:focus {
         width: 28%;
     }
 
+/* fazer diferente nos mobile */
+
+    
+
 }
 
 /* Tablets modo retrato: */
@@ -340,6 +429,7 @@ input:focus {
     .content-attributes {
         width: 100%;
     }
+
 }
 
 /* Laptops, desktops e alguns tablets em modo paisagem: */
@@ -352,18 +442,148 @@ input:focus {
     .content-main {
         flex-direction: row;
     }
+
+
+    .createBy {
+        position: absolute;
+        bottom: 1rem;
+        color: #c7c5c5;
+    }
+
+    .p-image {
+        height: 3rem;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .p-teste {
+        font-size: 1.5rem;
+        margin-top: .5rem;
+        color: white;
+    }
+
+    .p-description {
+        font-size: 1rem;
+        color: #ffffff;
+        margin-top: .5rem;
+        text-align: center;
+        letter-spacing: 2px;
+        line-height: 2rem;
+    }
+
+
 }
 
 /* Telas widescreen e ultrawide padrão */
-
-@media screen and (min-width: 1440px) and (max-width: 1919px) {
+/* para qualquer erro, colocar o max-width em 1919 e o font-size em 13px */
+@media screen and (min-width: 1440px) and (max-width: 1700px) {
     html {
-        font-size: 13px;
+        font-size: 15px;
+    }
+
+    .banners {
+        display: flex;
+        width: 100%;
+        gap: .9rem;
     }
 
     .content-main {
         flex-direction: row;
     }
+
+    .p-image {
+        height: 7rem;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .p-teste {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        color: white;
+    }
+
+    .p-description {
+        font-size: .9rem;
+        color: #ffffff;
+        margin-top: 1rem;
+        text-align: center;
+        letter-spacing: 2px;
+        line-height: 2rem;
+    }
+
+}
+
+
+
+@media screen and (min-width: 1701px) and (max-width: 1990px) {
+    html {
+        font-size: 15px;
+    }
+
+    .banners {
+        display: flex;
+        width: 100%;
+        gap: .9rem;
+    }
+
+    .content-main {
+        flex-direction: row;
+    }
+
+    .p-image {
+        height: 7rem;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .p-teste {
+        font-size: 1.8rem;
+        margin-top: 1.2rem;
+        color: white;
+    }
+
+    .p-description {
+        font-size: 1.2rem;
+        color: #ffffff;
+        margin-top: 2rem;
+        text-align: center;
+        letter-spacing: 2px;
+        line-height: 2rem;
+    }
+
+}
+
+@media screen and (min-width: 1991px) and (max-width: 2358px) {
+    html {
+        font-size: 15px;
+    }
+
+    .content-main {
+        flex-direction: row;
+    }
+
+    .p-image {
+        height: 7rem;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .p-teste {
+        font-size: 1.6rem;
+        margin-top: 1.2rem;
+        color: white;
+    }
+
+    .p-description {
+        font-size: 1rem;
+        color: #ffffff;
+        margin-top: 1.5rem;
+        text-align: center;
+        letter-spacing: 2px;
+        line-height: 2rem;
+    }
+
 }
 
 /* Telas 4k + - */
@@ -377,6 +597,7 @@ input:focus {
         flex-direction: row;
     }
 
+
 }
 
 /* Celulares deitados */
@@ -386,4 +607,5 @@ input:focus {
     html {
         font-size: 6px;
     }
+
 }
