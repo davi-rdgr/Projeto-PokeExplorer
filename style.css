@@ -190,6 +190,35 @@ input:focus {
     gap: 1.25rem;
 }
 
+/* ////////////////// */
+
+.banners {
+    display: flex;
+    width: 70%;
+    height: 80%;
+    gap: 10px;
+
+}
+
+.bannersImages {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .5;
+    transition: .5s ease;
+    border-radius: 10px;
+}
+
+.bannersImages:hover {
+    cursor: pointer;
+    width: 100px;
+    /* opacity: 1; */
+    opacity: .8;
+    filter: contrast(120%);
+}
+
+/* ////////////////// */
+
 .intro-pokeimage {
     height: 21.875rem;
 }
