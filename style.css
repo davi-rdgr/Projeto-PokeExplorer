@@ -230,9 +230,9 @@ input:focus {
     bottom: 0;
     top: 0;
     opacity: .2;
-    transform: translateY(100%);
+    transform: translateY(75%);
     transition: all .5s ease;
-    border-top-left-radius: 10%;
+
 }
 
 .divImage:hover .p-div {
@@ -253,7 +253,6 @@ input:focus {
 }
 
 .p-image {
-
     margin: 0 auto;
     display: block;
 }
@@ -378,9 +377,9 @@ input:focus {
         width: 28%;
     }
 
-/* fazer diferente nos mobile */
+    /* fazer diferente nos mobile */
 
-    
+
 
 }
 
