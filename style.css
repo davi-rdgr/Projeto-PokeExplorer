@@ -504,7 +504,7 @@ input:focus {
 
     .banners {
         display: flex;
-        width: 83%;
+        width: 100%;
         gap: .9rem;
     }
 
@@ -544,7 +544,7 @@ input:focus {
 
     .banners {
         display: flex;
-        width: 100%;
+        width: 83%;
         gap: .9rem;
     }
 
