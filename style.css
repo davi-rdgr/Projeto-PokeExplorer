@@ -22,8 +22,8 @@
 
 body {
 
-    background-size: cover;
     background-image: url(images/backgroundCharizard.bmp);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     width: 100vw;
@@ -73,7 +73,6 @@ form input {
     padding: 1rem 1rem;
     font-size: 1.063rem;
     height: 2.5rem;
-    /*     border: .1px solid white; */
 }
 
 .optColors {
@@ -192,8 +191,7 @@ input:focus {
     border-radius: 10px;
 }
 
-/* ////////////////// */
-
+/* Banners */
 
 .banners {
     display: flex;
@@ -276,6 +274,8 @@ input:focus {
 .bannersMobile {
     display: none;
 }
+
+/* Introdução */
 
 .intro-pokeimage {
     height: 21.875rem;
@@ -454,6 +454,11 @@ input:focus {
 /* Laptops, desktops e alguns tablets em modo paisagem: */
 
 @media screen and (min-width: 993px) and (max-width: 1439px) {
+
+    * {
+        background-color: yellow;
+    }
+
     html {
         font-size: 11px;
     }
@@ -510,6 +515,11 @@ input:focus {
 /* Telas widescreen e ultrawide padrão */
 /* para qualquer erro, colocar o max-width em 1919 e o font-size em 13px */
 @media screen and (min-width: 1440px) and (max-width: 1700px) {
+
+    * {
+        background-color: red;
+    }
+
     html {
         font-size: 15px;
     }
@@ -550,6 +560,9 @@ input:focus {
 
 
 @media screen and (min-width: 1701px) and (max-width: 1990px) {
+    * {
+        background-color: blue;
+    }
     html {
         font-size: 15px;
     }
@@ -601,6 +614,9 @@ input:focus {
 }
 
 @media screen and (min-width: 1991px) and (max-width: 2358px) {
+    * {
+        background-color: grey;
+    }
     html {
         font-size: 15px;
     }
