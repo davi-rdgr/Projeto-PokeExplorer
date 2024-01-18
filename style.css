@@ -21,8 +21,9 @@
 }
 
 body {
-    background-image: url(f078kw2v.bmp);
+
     background-size: cover;
+    background-image: url(f078kw2v.bmp);
     background-repeat: no-repeat;
     background-position: center;
     width: 100vw;
@@ -229,8 +230,8 @@ input:focus {
     position: absolute;
     bottom: 0;
     top: 0;
-    opacity: .2;
-    transform: translateY(75%);
+    opacity: .4;
+    transform: translateY(70%);
     transition: all .5s ease;
 
 }
@@ -248,7 +249,7 @@ input:focus {
 
 .createBy {
     position: absolute;
-    bottom: 1rem;
+    bottom: 1px;
     color: #c7c5c5;
 }
 
@@ -272,7 +273,9 @@ input:focus {
     line-height: 2rem;
 }
 
-/* ////////////////// */
+.bannersMobile {
+    display: none;
+}
 
 .intro-pokeimage {
     height: 21.875rem;
@@ -377,10 +380,27 @@ input:focus {
         width: 28%;
     }
 
-    /* fazer diferente nos mobile */
 
+    .intro-p {
+        font-size: 2rem;
+    }
 
+    /* como tive dificuldade para colocar apenas os paragrafos e anular as imagens referente ao modelo padrão de widescreen e ultrawide, criei uma div especialmente para isso */
+    .banners {
+        display: none;
+    }
 
+    .bannersMobile {
+        display: block;
+    }
+
+    .p-image {
+        height: 5rem;
+    }
+
+    .p-description {
+        margin-top: 0px;
+    }
 }
 
 /* Tablets modo retrato: */
@@ -470,6 +490,8 @@ input:focus {
         line-height: 2rem;
     }
 
+
+    
 
 }
 
@@ -607,4 +629,23 @@ input:focus {
         font-size: 6px;
     }
 
+    .banners {
+        display: none;
+    }
+
+    .bannersMobile {
+        display: block;
+    }
+
+    .p-image {
+        height: 5rem;
+    }
+
+    .p-description {
+        margin-top: 0px;
+    }
+
+    .createBy {
+        display: none;
+    }
 }
