@@ -559,13 +559,13 @@ input:focus {
     }
 
     .p-teste {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         margin-top: 1.2rem;
         color: white;
     }
 
     .p-description {
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: #ffffff;
         margin-top: 2rem;
         text-align: center;
@@ -638,7 +638,7 @@ input:focus {
     }
 
     .p-image {
-        height: 5rem;
+        height: 4rem;
     }
 
     .p-description {
