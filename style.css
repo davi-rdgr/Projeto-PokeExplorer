@@ -23,7 +23,7 @@
 body {
 
     background-size: cover;
-    background-image: url(f078kw2v.bmp);
+    background-image: url(images/backgroundCharizard.bmp);
     background-repeat: no-repeat;
     background-position: center;
     width: 100vw;
@@ -258,7 +258,7 @@ input:focus {
     display: block;
 }
 
-.p-teste {
+.p-tittle {
     font-size: 2rem;
     margin-top: 1.2rem;
     color: white;
@@ -462,6 +462,18 @@ input:focus {
         flex-direction: row;
     }
 
+    .banners .p-div {
+        background-color: #18181baf;
+        padding: 1rem;
+        width: 100%;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        opacity: .4;
+        transform: translateY(85%);
+        transition: all .5s ease;
+    }
 
     .createBy {
         position: absolute;
@@ -475,7 +487,7 @@ input:focus {
         display: block;
     }
 
-    .p-teste {
+    .p-tittle {
         font-size: 1.5rem;
         margin-top: .5rem;
         color: white;
@@ -491,7 +503,7 @@ input:focus {
     }
 
 
-    
+
 
 }
 
@@ -518,7 +530,7 @@ input:focus {
         display: block;
     }
 
-    .p-teste {
+    .p-tittle {
         font-size: 1.2rem;
         margin-top: 1rem;
         color: white;
@@ -542,6 +554,19 @@ input:focus {
         font-size: 15px;
     }
 
+    .banners .p-div {
+        background-color: #18181baf;
+        padding: 1rem;
+        width: 100%;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        opacity: .4;
+        transform: translateY(78%);
+        transition: all .5s ease;
+    }
+
     .banners {
         display: flex;
         width: 100%;
@@ -558,14 +583,14 @@ input:focus {
         display: block;
     }
 
-    .p-teste {
-        font-size: 1.4rem;
+    .p-tittle {
+        font-size: 2rem;
         margin-top: 1.2rem;
         color: white;
     }
 
     .p-description {
-        font-size: 1rem;
+        font-size: 1.3rem;
         color: #ffffff;
         margin-top: 2rem;
         text-align: center;
@@ -590,7 +615,7 @@ input:focus {
         display: block;
     }
 
-    .p-teste {
+    .p-tittle {
         font-size: 1.6rem;
         margin-top: 1.2rem;
         color: white;
@@ -614,11 +639,38 @@ input:focus {
         font-size: 39px;
     }
 
-    .content-main {
-        flex-direction: row;
+    .banners .p-div {
+        background-color: #18181baf;
+        padding: 1rem;
+        width: 100%;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        opacity: .4;
+        transform: translateY(75%);
+        transition: all .5s ease;
     }
 
+    .p-image {
+        margin: 0 auto;
+        display: block;
+    }
 
+    .p-tittle {
+        font-size: 1.1rem;
+        margin-top: 1.2rem;
+        color: white;
+    }
+
+    .p-description {
+        font-size: .8rem;
+        color: #ffffff;
+        margin-top: 2rem;
+        text-align: center;
+        letter-spacing: 2px;
+        line-height: 1.4rem;
+    }
 }
 
 /* Celulares deitados */
