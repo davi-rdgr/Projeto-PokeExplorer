@@ -21,6 +21,7 @@
 }
 
 body {
+
     background-size: cover;
     background-image: url(f078kw2v.bmp);
     background-repeat: no-repeat;
@@ -232,6 +233,7 @@ input:focus {
     opacity: .4;
     transform: translateY(70%);
     transition: all .5s ease;
+
 }
 
 .divImage:hover .p-div {
@@ -377,6 +379,7 @@ input:focus {
         position: relative;
         width: 28%;
     }
+
 
     .intro-p {
         font-size: 2rem;
