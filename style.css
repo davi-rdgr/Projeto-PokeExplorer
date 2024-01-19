@@ -516,9 +516,7 @@ input:focus {
 /* para qualquer erro, colocar o max-width em 1919 e o font-size em 13px */
 @media screen and (min-width: 1440px) and (max-width: 1700px) {
 
-    * {
-        background-color: red;
-    }
+/* tamanho do Pc da Laís */
 
     html {
         font-size: 15px;
@@ -526,7 +524,7 @@ input:focus {
 
     .banners {
         display: flex;
-        width: 100%;
+        width: 90%;
         gap: .9rem;
     }
 
@@ -535,7 +533,7 @@ input:focus {
     }
 
     .p-image {
-        height: 7rem;
+        height: 6rem;
         margin: 0 auto;
         display: block;
     }
@@ -547,7 +545,7 @@ input:focus {
     }
 
     .p-description {
-        font-size: .9rem;
+        font-size: .8rem;
         color: #ffffff;
         margin-top: 1rem;
         text-align: center;
