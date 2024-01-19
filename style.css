@@ -258,6 +258,29 @@ input:focus {
     font-size: 2rem;
     margin-top: 1.2rem;
     color: white;
+    transform: translateX(100%);
+    transition: all .5s ease-in-out;
+}
+
+.divImage:hover .p-tittle {
+    transform: translateX(0%);
+}
+
+.div-barra {
+    margin: 5px auto;
+    height: 1.5px;
+    border-radius: 5px;
+    width: 100%;
+    opacity: .5;
+    position: relative;
+    transform: translateX(-100%);
+    transition: all .5s ease;
+}
+
+.divImage:hover .div-barra {
+    transform: translateX(0%);
+    transition: all 1s ease;
+    opacity: 1;
 }
 
 .p-description {
@@ -267,6 +290,12 @@ input:focus {
     text-align: center;
     letter-spacing: 2px;
     line-height: 2rem;
+    transform: translateY(100%);
+    transition: all .3s ease-in-out;
+}
+
+.divImage:hover .p-description {
+    transform: translateY(0%);
 }
 
 .bannersMobile {
