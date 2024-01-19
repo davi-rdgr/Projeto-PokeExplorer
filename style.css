@@ -519,12 +519,12 @@ input:focus {
 /* tamanho do Pc da Laís */
 
     html {
-        font-size: 15px;
+        font-size: 13.5px;
     }
 
     .banners {
         display: flex;
-        width: 90%;
+        width: 80%;
         gap: .9rem;
     }
 
@@ -539,13 +539,13 @@ input:focus {
     }
 
     .p-tittle {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         margin-top: 1rem;
         color: white;
     }
 
     .p-description {
-        font-size: .8rem;
+        font-size: 1rem;
         color: #ffffff;
         margin-top: 1rem;
         text-align: center;
