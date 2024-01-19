@@ -1,43 +1,52 @@
+
 let content = document.querySelector('.content-main')
 let sectionPokemonInfo = document.querySelector('.sectionPokemonInfo')
 let catchalert = document.querySelector('.catch-alert')
-
+let catchimage = document.querySelector('.catch-image')
 content.style.display = 'none'
+catchimage.style.display = 'none'
 
 // Adiciona um ouvinte de eventos para o evento de envio do formulário
 // Evita o envio padrão do formulário que recarregaria a página
-
 document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault();
 
     // Obtém o valor digitado pelo usuário e converte para letras minúsculas
     const pokemonName = document.getElementById('pokemonName').value.toLowerCase();
     const APIURL = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+
     // Faz uma requisição para a API do PokeAPI
     fetch(APIURL)
         .then((res) => res.json()) // Converte a resposta em formato JSON
         .then(data => {
 
+            // Substitui a tela inicial pelos dados dos Pokémon assim que requerido.
             content.style.display = 'flex'
             sectionPokemonInfo.style.display = 'flex'
+
+            // Esconde os catch error, pois caso aconteça algum erro, os avisos não sairão da tela ao voltar para normalidade.
             catchalert.style.display = 'none'
+            catchimage.style.display = 'none'
 
             // Função para capitalizar a primeira letra de uma string
             function capitalizarPrimeiraLetra(str) {
                 return str.charAt(0).toUpperCase() + str.slice(1);
             }
 
-            // recebendo o valor da API e armazenando
+            // Recebendo o valor da API e armazenando
             const name = data.name;
             const nameCapitalizado = capitalizarPrimeiraLetra(name);
             const ident = data.id;
             const types = data.types;
+
+            // Criei um Array para guardar os tipos de Pokémon e acessá-los mais facilmente depois pelos índices.
             let pokemonTypes = [];
             types.forEach((typeData) => {
                 const typeName = capitalizarPrimeiraLetra(typeData.type.name);
                 pokemonTypes.push(typeName);
             });
 
+            // Criei um Array para guardar as habilidades dos Pokémon e acessá-los mais facilmente depois pelos índices.
             const abilities = data.abilities;
             let pokemonAbilities = []
 
@@ -58,32 +67,24 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
             // Armazenando o container que receberá o nome, ícone do tipo e tipo.
             // Enviando os atributos vindos da API para o container no HTML.
-
             const pokemonNameH1 = document.querySelector('.pokemon-name');
             const imagePokemonType = document.querySelector('.imagePokemonType');
             const pokemonType = document.querySelector('.pokemonType');
             const pokemonTypetwo = document.querySelector('.pokemonTypetwo');
-
-            pokemonNameH1.innerHTML = nameCapitalizado;
-            pokemonType.innerHTML = '';
-            pokemonTypetwo.innerHTML = '';
-
-            if (pokemonTypes.length > 0) {
-                pokemonType.innerHTML = pokemonTypes[0];
-
-                if (pokemonTypes.length > 1) {
-                    pokemonTypetwo.innerHTML = pokemonTypes[1];
-                }
-            }
-
             const abilitiesSpan = document.querySelector('.pokeAbilities')
             const abilitiesSpanTwo = document.querySelector('.pokeAbilitiesTwo')
+
+            pokemonNameH1.innerHTML = nameCapitalizado;
+
+            // Atribuindo os valores de habilidades e tipos de Pokémons. 
+            pokemonType.textContent = pokemonTypes[0]
+            pokemonTypetwo.textContent = pokemonTypes[1]
+
             abilitiesSpan.textContent = pokemonAbilities[0]
             abilitiesSpanTwo.textContent = pokemonAbilities[1]
 
-            // armazenando o container que receberá os nomes dos atributos.
-            // enviando para o html o nome dos atributos quando a consulta for realizada.
-
+            // Armazenando o container que receberá os nomes dos atributos.
+            // Enviando para o html o nome dos atributos quando a consulta for realizada.
             const attweight = document.querySelector('.att-weight');
             const attheight = document.querySelector('.att-height');
             const atthealth = document.querySelector('.att-health');
@@ -102,9 +103,8 @@ document.querySelector('form').addEventListener('submit', function (event) {
             attspecialDefense.textContent = 'Special Defense'
             attspeed.textContent = 'Speed'
 
-            // armazenando o container que receberá os atributos.
-            // enviando os atributos vindos da API para o container no HTML.
-
+            // Armazenando o container que receberá os atributos.
+            // Enviando os atributos vindos da API para o container no HTML.
             const attweightresult = document.querySelector('.att-weight-result')
             const attheightresult = document.querySelector('.att-height-result')
             const atthealthresult = document.querySelector('.att-health-result')
@@ -123,22 +123,20 @@ document.querySelector('form').addEventListener('submit', function (event) {
             attspecialdefenseresult.innerHTML = defenseSpecial;
             attspeedresult.innerHTML = speed;
 
-            // armazena a imagem do Pokemon e o ID.
-            // envia a imagem do Pokemon e o ID para o html.
-
+            // Armazena a imagem do Pokemon e o ID.
+            // Envia a imagem do Pokemon e o ID para o html.
             const imagePokemon = document.querySelector('.imagePokemon');
             const imageID = document.querySelector('.imageID');
-            imagePokemon.src = image
-            imageID.textContent = `#${ident}`
+            imagePokemon.src = image;
+            imageID.textContent = `#${ident}`;
 
-            // essa const recebe a div que introduz a tela, e faz um teste para identificar se há um tipo de pokemon escolhido. Caso sim, ela anula a tela, o que resulta na tela de apresentação de atributos padrão.
-
-            const introPoke = document.querySelector('.intro-screen')
+            // Essa const recebe a div que introduz a tela, e faz um teste para identificar se há um tipo de pokemon escolhido. Caso sim, ela anula a tela, o que resulta na tela de apresentação de atributos padrão.
+            const introPoke = document.querySelector('.intro-screen');
             if (pokemonTypes[0]) {
                 introPoke.style.display = 'none'
             }
 
-            // let que estão armazenando os valores máximos de cada atributo e fazendo um processo de padronização para ocupar espaços entre 0 e 100.
+            // Let que estão armazenando os valores máximos de cada atributo e fazendo um processo de padronização para ocupar espaços entre 0 e 100.
             // Pokémons padrão:
             let maxweight = 1420;
             let maxheight = 100;
@@ -149,9 +147,10 @@ document.querySelector('form').addEventListener('submit', function (event) {
             let maxdefenseSpecial = 255;
             let maxspeed = 160;
 
-            // alguns pokémons tem atributos extremamente maiores que outros, o que faz as barras de progresso não aparecerem quando é um valor baixo, devido ao valor máximo ser muito alto. Nesse teste estou pré definindo os valores padrões no começo, e testando para ver se o pokémon possui atributos altos, para reatribuir um limite e a barra não exceder seu limite.
-            // Pokémons grandes: 
+            // Alguns pokémons tem atributos extremamente maiores que outros, o que faz as barras de progresso não aparecerem quando é um valor baixo, devido ao valor máximo ser muito alto. 
+            // Nesse teste estou pré definindo os valores padrões no começo, e testando para ver se o pokémon possui atributos altos, para reatribuir um limite e a barra não exceder seu limite.
 
+            // Pokémons grandes: 
             if (weight >= 1500 && weight <= 4999) {
                 maxweight = 4999;
                 maxheight = 145;
@@ -161,9 +160,9 @@ document.querySelector('form').addEventListener('submit', function (event) {
             else if (weight >= 5000 && weight <= 10000) {
                 maxweight = 10000;
                 maxheight = 750;
-
             }
 
+            // Faço um calculo do valor do atributo dividido pelo máximo que o atributo pode chegar, dependendo do tipo de Pokémon, multiplicado por 100, assim escalando eles para caber entre 0 e 100 e ser atribuidos à barra de progresso.
             const normalizedWeight = (weight / maxweight) * 100;
             const normalizedHeight = (height / maxheight) * 100;
             const normalizedHealth = (health / maxhealth) * 100;
@@ -173,6 +172,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const normalizedDefenseSpecial = (defenseSpecial / maxdefenseSpecial) * 100;
             const normalizedSpeed = (speed / maxspeed) * 100;
 
+            // Armazenando o container que receberá as barras de progresso.
             const progressWeight = document.querySelector('.progressWeight');
             const progressHeight = document.querySelector('.progressHeight');
             const progressHealth = document.querySelector('.progressHealth');
@@ -182,8 +182,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
             const progressSpecialDefense = document.querySelector('.progressSpecialDefense');
             const progressSpeed = document.querySelector('.progressSpeed');
 
-            // estou definindo um timing para criar uma transition que farão as barras saírem de width: 0 para seu posto normal de forma animada.
-
+            // Estou definindo um timing para criar uma transition que fará as barras saírem de width: 0 para seu posto normal de forma animada.
             let timing = 500;
 
             progressWeight.style.transition = 'width ' + timing / 1000 + "s ease-out";
@@ -195,8 +194,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
             progressSpecialDefense.style.transition = 'width ' + timing / 1000 + "s ease-out";
             progressSpeed.style.transition = 'width ' + timing / 1000 + "s ease-out";
 
-            // estou usando a função setTimeout para dar um delay de 0.2 segundos no inicio da animação.
-
+            // Estou atribuindo os valores finais às divs usando a função setTimeout para dar um delay de 0.2 segundos no inicio da animação.
             setTimeout(function () {
                 progressWeight.style.width = `${normalizedWeight}%`;
                 progressHeight.style.width = `${normalizedHeight}%`;
@@ -208,6 +206,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 progressSpeed.style.width = `${normalizedSpeed}%`;
             }, 200)
 
+            // Criei um objeto com padrão de cores e contendo a url de imagens para facilitar a montagem de cada tipo de pokémon.
             const typeShadows = {
                 Electric: { color: '#EED535', filename: 'IconType/electric.jpg', filtercolor: 'rgba(238, 213, 53, 0.25)', backgroundName: 'imagesBackground/electric.jpg' },
                 Bug: { color: '#729F3F', filename: 'IconType/bug.jpg', filtercolor: 'rgba(114, 159, 63, 0.25)', backgroundName: 'imagesBackground/bug.jpg' },
@@ -230,8 +229,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
             };
 
 
-            // Verifica se o tipo existe no objeto antes de aplicar a sombra
-
+            // Verifica se o tipo existe no objeto antes de aplicar as estilizações
             if (typeShadows.hasOwnProperty(pokemonTypes[0])) {
                 imagePokemon.style.filter = `drop-shadow(2px 2px 10px ${typeShadows[pokemonTypes[0]].color})`;
                 imageID.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[0]].color})`;
@@ -243,33 +241,34 @@ document.querySelector('form').addEventListener('submit', function (event) {
                 abilitiesSpanTwo.style.color = typeShadows[pokemonTypes[0]].color;
                 abilitiesSpan.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[0]].color})`;
                 abilitiesSpanTwo.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[0]].color})`;
+                imagePokemonType.src = typeShadows[pokemonTypes[0]].filename;
 
+                // Verifica de há um segundo tipo de Pokémon, e se sim, aplica estilizações específicas para ele.
                 if (pokemonTypes[1]) {
                     pokemonTypetwo.innerHTML = pokemonTypes[1];
                     pokemonTypetwo.style.color = typeShadows[pokemonTypes[1]].color;
                     pokemonTypetwo.style.filter = `drop-shadow(1px 1px 10px ${typeShadows[pokemonTypes[1]].color})`;
                 }
 
-
-                imagePokemonType.src = typeShadows[pokemonTypes[0]].filename;
-
-
+                // Adiciona um background-image diferente ao body dependendo do tipo do Pokémon.
                 const body = document.body;
                 body.style.backgroundImage = `url('${typeShadows[pokemonTypes[0]].backgroundName}')`;
 
+                // Executa um ForEach em todos elementos com a classe optColors (ícones, títulos) para aplicar as cores.
                 const optColors = document.querySelectorAll('.optColors');
                 optColors.forEach(optColors => {
                     optColors.style.stroke = typeShadows[pokemonTypes[0]].color;
                     optColors.style.color = typeShadows[pokemonTypes[0]].color;
-
                 });
-
+                // Executa um ForEach em todos elementos com a classe att-colors (atributos, seus resultados) para aplicar as cores.
                 const attcolor = document.querySelectorAll('.att-color')
                 attcolor.forEach(attcolor => {
                     attcolor.style.color = typeShadows[pokemonTypes[0]].color
                     attcolor.style.filter = `drop-shadow(1px 1px 2px ${typeShadows[pokemonTypes[0]].color})`;
                 })
 
+                // Executa um ForEach em todos elementos com a classe progress (barras de progresso) para aplicar as cores.
+                // Pré-define o width da barra de progresso em 0 para que as animações ocorram melhor.
                 const progress = document.querySelectorAll('.progress')
                 progress.forEach(progress => {
                     progress.style.backgroundColor = typeShadows[pokemonTypes[0]].color
@@ -277,7 +276,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
                     progress.style.width = '0'
 
                 })
-
+                // Executa um ForEach em todos elementos com a classe progress-container (o background das progressbar) para aplicar as cores.
                 const progresscontainer = document.querySelectorAll('.progress-container')
                 progresscontainer.forEach(progresscontainer => {
                     progresscontainer.style.backgroundColor = typeShadows[pokemonTypes[0]].filtercolor
@@ -287,13 +286,15 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
         })
 
+        // o Catch notificará na tela caso um Pokémon inserido esteja escrito da forma incorreta.
         .catch((err) => {
             sectionPokemonInfo.style.display = 'none'
             content.style.display = 'none'
             catchalert.style.display = 'block'
             catchalert.innerHTML = 'Insira um Pokémon válido!'
+            catchimage.style.display = 'block'
+            catchimage.src = 'images/ErrorImage.jpg'
             catchalert.style.fontSize = '30px'
             catchalert.style.color = 'white'
         });
-
 });
