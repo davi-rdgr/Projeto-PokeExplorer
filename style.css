@@ -22,7 +22,7 @@
 
 body {
 
-    background-image: url(images/backgroundCharizard.bmp);
+    background-image: url(images/backgroundCharizard.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -211,7 +211,6 @@ input:focus {
     opacity: .8;
     transition: .5s ease;
     border-radius: 10px;
-
 }
 
 .banners .bannersImages {
@@ -231,7 +230,6 @@ input:focus {
     opacity: .4;
     transform: translateY(70%);
     transition: all .5s ease;
-
 }
 
 .divImage:hover .p-div {
@@ -303,7 +301,6 @@ input:focus {
     justify-content: space-between;
     gap: 1.875rem;
     font-size: 1.75rem;
-
 }
 
 .content-grid {
@@ -348,6 +345,14 @@ input:focus {
 .progress {
     height: 100%;
     border-radius: 15px;
+}
+
+
+/* CATCH ERROR */
+
+.catch-image {
+    height: 10rem;
+    margin-top: 1rem;
 }
 
 /* RESPONSIVIDADE: */
@@ -447,19 +452,14 @@ input:focus {
     .content-attributes {
         width: 100%;
     }
-
 }
 
 /* Laptops, desktops e alguns tablets em modo paisagem: */
 
 @media screen and (min-width: 993px) and (max-width: 1439px) {
 
-    * {
-        background-color: yellow;
-    }
-
     html {
-        font-size: 11px;
+        font-size: 10.5px;
     }
 
     .content-main {
@@ -561,7 +561,7 @@ input:focus {
         bottom: 0;
         top: 0;
         opacity: .4;
-        transform: translateY(78%);
+        transform: translateY(73%);
         transition: all .5s ease;
     }
 
@@ -595,7 +595,6 @@ input:focus {
         letter-spacing: 2px;
         line-height: 2rem;
     }
-
 }
 
 @media screen and (min-width: 1991px) and (max-width: 2358px) {
