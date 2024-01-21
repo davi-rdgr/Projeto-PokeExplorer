@@ -212,6 +212,21 @@ input:focus {
     transition: .5s ease;
     border-radius: 10px;
 }
+.divImage:nth-child(1) {
+    filter: drop-shadow(0 0 2px #83c9f8);
+}
+.divImage:nth-child(2) {
+    filter: drop-shadow(0 0 2px #EED535);
+}
+.divImage:nth-child(3) {
+    filter: drop-shadow(0 0 2px #b088f0);
+}
+.divImage:nth-child(4) {
+    filter: drop-shadow(0 0 2px #FD7D24);
+}
+.divImage:nth-child(5) {
+    filter: drop-shadow(0 0 2px #3DC7EF);
+}
 
 .banners .bannersImages {
     flex-basis: 25%;
